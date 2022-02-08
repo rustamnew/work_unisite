@@ -162,6 +162,27 @@ $this->setFrameMode(true);
                                     </div>
                                 <?endif;?>
 
+                                <?if($arItem["PROPERTIES"]["center"]["VALUE"] == "Y"):?>
+                                    <div class="sec-hero display-table" style="background-image: url(<?=$arItem["PREVIEW_PICTURE"]["SRC"]?>)">
+                                        <div class="table-cell">
+                                            <div class="overlay"></div>
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="col-lg-10 offset-lg-1 main-slider-col">
+                                                        <div class="box-hero">
+                                                            <div class="banner banner-3 text-center">
+                                                                <div class="headline-top"><?=$arItem["PROPERTIES"]["subtitle"]["VALUE"]["TEXT"]?></div>
+                                                                <h1 class="handline"><?=$arItem["PREVIEW_TEXT"]?></h1>
+                                                                <p class="about-website"><?=$arItem["DETAIL_TEXT"]?></p>
+                                                                <a class="<?if(!$arItem["PROPERTIES"]["url"]["VALUE"]):?>summonFormButton <?endif;?>btn-1 btn-2" href="<?=$arItem["PROPERTIES"]["url"]["VALUE"];?>"><?=$arItem["PROPERTIES"]["text"]["VALUE"];?></a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <?endif;?>
                             </div>
                         </div>
                     </div>
