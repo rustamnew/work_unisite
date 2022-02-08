@@ -35,6 +35,9 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
         <!-- :: Lity -->
 		<?$APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH. '/assets/css/lity.min.css');?>
 
+        <!-- :: Transitions -->
+		<?$APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH. '/assets/css/transitions.css');?>
+
         <!-- :: Style CSS -->
 		<?$APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH. '/assets/css/style.css');?>
 
@@ -255,65 +258,86 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 			</div>
 			
 			<!-- :: Header -->
-			<header class="header" id="page">
-				<div class="header-owl owl-carousel owl-theme">
-					<div class="sec-hero display-table" style="background-image: url(assets/images/header/01_header.jpg)">
-						<div class="table-cell">
-							<div class="overlay"></div>
-							<div class="container">
-								<div class="row">
-									<div class="col-lg-8">
-										<div class="banner">
-											<h1 class="handline">Qulity is the best business plan</h1>
-											<p class="about-site">Consulto specially designed for Consulting and Finance industry, Financial Advisors, Accountants, Consultants or other Finance and Consulting related businesses.</p>
-											<div class="buttons">
-												<a href="#start" class="btn-1 move-section">Get Started</a>
-												<a href="01_services.html" class="btn-1 btn-2">Our Services</a>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="sec-hero display-table" style="background-image: url(assets/images/header/02_header.jpg)">
-						<div class="table-cell">
-							<div class="overlay"></div>
-							<div class="container">
-								<div class="row">
-									<div class="col-lg-8">
-										<div class="banner">
-											<h1 class="handline">Consulto Helps You To Save Your Money</h1>
-											<p class="about-site">Consulto specially designed for Consulting and Finance industry, Financial Advisors, Accountants, Consultants or other Finance and Consulting related businesses.</p>
-											<div class="buttons">
-												<a href="#" class="btn-1 btn-3">See More</a>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="sec-hero display-table" style="background-image: url(assets/images/header/03_header.jpg)">
-						<div class="table-cell">
-							<div class="overlay"></div>
-							<div class="container">
-								<div class="row">
-									<div class="col-lg-8">
-										<div class="banner">
-											<h1 class="handline">Best Creative Team With Smart Ideas</h1>
-											<p class="about-site">Consulto specially designed for Consulting and Finance industry, Financial Advisors, Accountants, Consultants or other Finance and Consulting related businesses.</p>
-											<div class="buttons">
-												<a href="01_services.html" class="btn-1 btn-2">Our Services</a>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</header>
+			<?$APPLICATION->IncludeComponent(
+	"bitrix:news.list", 
+	"banner_main", 
+	array(
+		"COMPONENT_TEMPLATE" => "banner_main",
+		"IBLOCK_TYPE" => "banners",
+		"IBLOCK_ID" => "2",
+		"NEWS_COUNT" => "20",
+		"SORT_BY1" => "ACTIVE_FROM",
+		"SORT_ORDER1" => "DESC",
+		"SORT_BY2" => "SORT",
+		"SORT_ORDER2" => "ASC",
+		"FILTER_NAME" => "",
+		"FIELD_CODE" => array(
+			0 => "DETAIL_PICTURE",
+			1 => "",
+		),
+		"PROPERTY_CODE" => array(
+			0 => "teasers_show",
+			1 => "subtitle",
+			2 => "url1",
+			3 => "url2",
+			4 => "text1",
+			5 => "text2",
+			6 => "center",
+			7 => "teaser1_title",
+			8 => "teaser1_show",
+			9 => "teaser1_url",
+			10 => "teaser2_title",
+			11 => "teaser2_show",
+			12 => "teaser2_url",
+			13 => "teaser3_title",
+			14 => "teaser3_show",
+			15 => "teaser3_url",
+			16 => "teaser4_title",
+			17 => "teaser4_show",
+			18 => "teaser4_url",
+			19 => "",
+		),
+		"CHECK_DATES" => "Y",
+		"DETAIL_URL" => "",
+		"AJAX_MODE" => "N",
+		"AJAX_OPTION_JUMP" => "N",
+		"AJAX_OPTION_STYLE" => "Y",
+		"AJAX_OPTION_HISTORY" => "N",
+		"AJAX_OPTION_ADDITIONAL" => "",
+		"CACHE_TYPE" => "A",
+		"CACHE_TIME" => "36000000",
+		"CACHE_FILTER" => "N",
+		"CACHE_GROUPS" => "Y",
+		"PREVIEW_TRUNCATE_LEN" => "",
+		"ACTIVE_DATE_FORMAT" => "d.m.Y",
+		"SET_TITLE" => "Y",
+		"SET_BROWSER_TITLE" => "Y",
+		"SET_META_KEYWORDS" => "Y",
+		"SET_META_DESCRIPTION" => "Y",
+		"SET_LAST_MODIFIED" => "N",
+		"INCLUDE_IBLOCK_INTO_CHAIN" => "Y",
+		"ADD_SECTIONS_CHAIN" => "Y",
+		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
+		"PARENT_SECTION" => "",
+		"PARENT_SECTION_CODE" => "",
+		"INCLUDE_SUBSECTIONS" => "Y",
+		"STRICT_SECTION_CHECK" => "N",
+		"PAGER_TEMPLATE" => ".default",
+		"DISPLAY_TOP_PAGER" => "N",
+		"DISPLAY_BOTTOM_PAGER" => "Y",
+		"PAGER_TITLE" => "Новости",
+		"PAGER_SHOW_ALWAYS" => "N",
+		"PAGER_DESC_NUMBERING" => "N",
+		"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+		"PAGER_SHOW_ALL" => "N",
+		"PAGER_BASE_LINK_ENABLE" => "N",
+		"SET_STATUS_404" => "N",
+		"SHOW_404" => "N",
+		"MESSAGE_404" => ""
+	),
+	false
+);?>
+			
 
 	
 						
