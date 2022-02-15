@@ -89,8 +89,10 @@
     $(window).on('scroll', function () {
         if ($(window).scrollTop() > 400) {
             $('.scroll-up').addClass('active');
+            $('.fixed-messenger-buttons').addClass('active');
         } else {
             $('.scroll-up').removeClass('active');
+            $('.fixed-messenger-buttons').removeClass('active');
         }
     });
     
@@ -179,3 +181,32 @@
     });
     
 }());
+
+
+$(document).ready(function () {
+    /*Popup Form*/
+
+    //Open
+    let summonButtons = document.querySelectorAll('.summonFormButton')
+    summonButtons.forEach((item) => {
+        item.addEventListener('click', (e) => {
+            e.preventDefault()
+            let formWrap = document.querySelector('#summonedFormWrap')
+            formWrap.classList.add('active')
+        })
+    })
+
+    //Close
+    let formWrap = document.querySelector('#summonedFormWrap')
+    let closePopupForm = (e) => {
+        if (e) {
+            e.preventDefault()
+        }
+        formWrap.classList.remove('active')
+    }
+    formWrap.addEventListener('click', (e) => {
+        if(e.target.id === 'summonedFormWrap') {
+            closePopupForm(e)
+        }
+    })
+})
