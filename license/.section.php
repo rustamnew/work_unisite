@@ -1,5 +1,5 @@
 <?
-$sSectionName = "Сертификаты";
+$sSectionName = "Лицензии";
 $arDirProperties = Array(
 
 );

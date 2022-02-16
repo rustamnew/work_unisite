@@ -1,5 +1,6 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+$APPLICATION->SetPageProperty("image", "/assets/images/header/04_header.jpg");
 $APPLICATION->SetTitle("Блог");
 ?>
 <section class="bolg py-100 section">
@@ -201,7 +202,7 @@ $APPLICATION->SetTitle("Блог");
 						"DETAIL_DISPLAY_BOTTOM_PAGER" => "N",
 						"DETAIL_DISPLAY_TOP_PAGER" => "N",
 						"DETAIL_FIELD_CODE" => array(
-							0 => "",
+							0 => "TAGS",
 							1 => "",
 						),
 						"DETAIL_PAGER_SHOW_ALL" => "N",
@@ -255,13 +256,22 @@ $APPLICATION->SetTitle("Блог");
 						"SORT_ORDER2" => "ASC",
 						"STRICT_SECTION_CHECK" => "N",
 						"USE_CATEGORIES" => "N",
-						"USE_FILTER" => "N",
+						"USE_FILTER" => "Y",
 						"USE_PERMISSIONS" => "N",
 						"USE_RATING" => "N",
 						"USE_RSS" => "N",
 						"USE_SEARCH" => "N",
 						"USE_SHARE" => "N",
 						"COMPONENT_TEMPLATE" => "blog",
+						"FILTER_NAME" => "searchTags",
+						"FILTER_FIELD_CODE" => array(
+							0 => "",
+							1 => "",
+						),
+						"FILTER_PROPERTY_CODE" => array(
+							0 => "",
+							1 => "",
+						),
 						"SEF_URL_TEMPLATES" => array(
 							"news" => "",
 							"section" => "",

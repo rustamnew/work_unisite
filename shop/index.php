@@ -1,6 +1,6 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetPageProperty("image", SITE_TEMPLATE_PATH."/assets/images/header/07_header.jpg");
+$APPLICATION->SetPageProperty("image", "/assets/images/header/04_header.jpg");
 $APPLICATION->SetTitle("Магазин");
 ?>
 <?$APPLICATION->IncludeComponent(
@@ -22,7 +22,7 @@ $APPLICATION->SetTitle("Магазин");
 		"SORT_ORDER2" => "DESC",
 		"CHECK_DATES" => "Y",
 		"SEF_MODE" => "Y",
-		"SEF_FOLDER" => "#SITE_DIR#shop/",
+		"SEF_FOLDER" => "/shop/",
 		"AJAX_MODE" => "N",
 		"AJAX_OPTION_JUMP" => "N",
 		"AJAX_OPTION_STYLE" => "Y",
@@ -50,8 +50,9 @@ $APPLICATION->SetTitle("Магазин");
 			1 => "",
 		),
 		"LIST_PROPERTY_CODE" => array(
-			0 => "price",
-			1 => "",
+			0 => "",
+			1 => "price",
+			2 => "",
 		),
 		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
 		"DISPLAY_NAME" => "N",
@@ -61,15 +62,15 @@ $APPLICATION->SetTitle("Магазин");
 		"DETAIL_SET_CANONICAL_URL" => "N",
 		"DETAIL_ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"DETAIL_FIELD_CODE" => array(
-			0 => "",
-			1 => "PREVIEW_PICTURE",
-			2 => "",
+			0 => "PREVIEW_PICTURE",
+			1 => "",
 		),
 		"DETAIL_PROPERTY_CODE" => array(
-			0 => "code",
-			1 => "specs",
-			2 => "price",
-			3 => "",
+			0 => "",
+			1 => "code",
+			2 => "specs",
+			3 => "price",
+			4 => "",
 		),
 		"DETAIL_DISPLAY_TOP_PAGER" => "N",
 		"DETAIL_DISPLAY_BOTTOM_PAGER" => "N",
@@ -88,6 +89,7 @@ $APPLICATION->SetTitle("Магазин");
 		"SET_STATUS_404" => "N",
 		"SHOW_404" => "N",
 		"MESSAGE_404" => "",
+		"SHOW_SECTION" => "Y",
 		"SEF_URL_TEMPLATES" => array(
 			"news" => "",
 			"section" => "#SECTION_CODE#/",

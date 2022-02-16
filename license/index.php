@@ -1,6 +1,6 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetPageProperty("image", SITE_TEMPLATE_PATH."/assets/images/header/06_header.jpg");
+$APPLICATION->SetPageProperty("image", "/assets/images/header/04_header.jpg");
 $APPLICATION->SetTitle("Сертификаты");
 ?>
 <?$APPLICATION->IncludeComponent(
