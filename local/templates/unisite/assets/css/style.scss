@@ -1004,6 +1004,44 @@ p {
             transform: scaleX(1);
 }
 
+
+.services-section-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.services-section-item {
+    display: flex;
+    flex-direction: row;
+    align-items: unset;
+    border: 1px solid #e6e6e6;
+    padding: 12px;
+    margin-bottom: 24px;
+    width: 100%;
+}
+
+.services-section-item .item-image {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-right: 20px;
+    min-height: 0;
+    height: 220px;
+    width: 35%;
+}
+
+.services-section-item .item-content {
+    flex: 1;
+}
+
+.services-section-item h5 {
+    font-weight: 500;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    color: #0B0C26;
+}
+
 /* :: Provide */
 .provide{
     position: relative;
@@ -1427,6 +1465,10 @@ p {
     margin-bottom: 14px;
     color: $theme-color1;
     display: inline-block;
+
+    a {
+        color: $theme-color1;
+    }
 }
 .team .team-item .text-box ul li{
     display: inline-block;
@@ -1438,10 +1480,23 @@ p {
 .team .team-item .text-box ul li a{
     color: #0B0C26;
     font-size: 16px;
+
+    svg {
+        fill: #0B0C26;
+        height: 16px;
+    }
+    img {
+        height: 16px;
+    }
 }
-.team .team-item .text-box ul li:hover a{
-    color: $theme-color1;
-}
+.team .team-item .text-box ul li:hover{
+    a {
+        color: $theme-color1;
+    }
+    svg {
+        fill: $theme-color1;
+    }
+}  
 
 /* :: FAQs And Quote */
 .faq-quote{
@@ -3096,50 +3151,7 @@ body.active-dark-mode{
 
 
 
-/**/
 
-
-.page-wrapper {
-    position: relative;
-}
-
-.header-owl .table-cell {
-    position: relative;
-}
-.header-owl .header-banner-addition-image {
-    position: absolute;
-    right: 10%;
-    bottom: 0;
-    left: 60%;
-    width: 30%;
-    height: 100%;
-    background-repeat: no-repeat;
-    background-position: bottom;
-    background-size: contain;
-}
-
-.fancybox-2 .fancybox-item {
-    height: 100%;
-}
-.fancybox-item-icon svg,
-.fancybox-item-icon img {
-    height: 45px;
-    margin-bottom: 30px;
-}
-.fancybox-item:hover svg {
-    fill: $theme-color1;
-}
-
-.provide-item .provide-item-icon {
-    float: left; 
-}
-.provide-item .provide-item-icon svg{
-    height: 40px;
-    fill: #ffffff;
-}
-.provide-item .provide-item-icon img{
-    height: 40px;
-}
 
 
 /*Fixed Messengers*/
@@ -4105,7 +4117,61 @@ header.navs.active{
 }
 
 
+
+
 ////////////////////////////////
+/*Отсортировать*/
+
+
+.page-wrapper {
+    position: relative;
+}
+.row.incl_area > div[id] {
+    width: 100%;
+}
+.mb20 {
+    margin-bottom: 20px;
+}
+.licence-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+.header-owl .table-cell {
+    position: relative;
+}
+.header-owl .header-banner-addition-image {
+    position: absolute;
+    right: 10%;
+    bottom: 0;
+    left: 60%;
+    width: 30%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: contain;
+}
+.fancybox-2 .fancybox-item {
+    height: 100%;
+}
+.fancybox-item-icon svg,
+.fancybox-item-icon img {
+    height: 45px;
+    margin-bottom: 30px;
+}
+.fancybox-item:hover svg {
+    fill: $theme-color1;
+}
+
+.provide-item .provide-item-icon {
+    float: left; 
+}
+.provide-item .provide-item-icon svg{
+    height: 40px;
+    fill: #ffffff;
+}
+.provide-item .provide-item-icon img{
+    height: 40px;
+}
 
 
 

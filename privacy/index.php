@@ -1,7 +1,7 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetPageProperty("image", SITE_TEMPLATE_PATH."/assets/images/header/07_header.jpg");
-$APPLICATION->SetTitle("Ïîëèòèêà êîíôèäåíöèàëüíîñòè");
+$APPLICATION->SetTitle("ÐŸÐ¾Ð»Ð¸Ñ‚Ð¸ÐºÐ° ÐºÐ¾Ð½Ñ„Ð¸Ð´ÐµÐ½Ñ†Ð¸Ð°Ð»ÑŒÐ½Ð¾ÑÑ‚Ð¸");
 ?>
 
 <section class="py-100">

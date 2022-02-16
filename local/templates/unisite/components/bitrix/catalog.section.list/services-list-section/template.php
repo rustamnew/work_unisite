@@ -19,7 +19,7 @@ $this->setFrameMode(true);
 			<a href="<?=$arItem["SECTION_PAGE_URL"]?>" class="item-image" style="background-image: url(<?=$arItem["PICTURE"]["SRC"]?>)"></a>
 
 			<div class="item-content">
-				<h5><a href="<?=$arItem["SECTION_PAGE_URL"]?>"><?=$arItem["NAME"]?></a></h5>
+				<a href="<?=$arItem["SECTION_PAGE_URL"]?>"><h5><?=$arItem["NAME"]?></h5></a>
 				<p><?=$arItem["DESCRIPTION"]?></p>
 			</div>
 		</li>

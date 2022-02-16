@@ -60,6 +60,9 @@ $GLOBALS += CJusticeMain::MainProperty($GLOBALS["codekeepers_block_id"]["setting
         <!-- :: Lity -->
 		<?$APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH. '/assets/css/lity.min.css');?>
 
+        <!-- :: fancy -->
+		<?$APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH. '/assets/css/fancybox.css');?>
+
         <!-- :: Transitions -->
 		<?$APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH. '/assets/css/transitions.css');?>
 
@@ -514,7 +517,7 @@ $GLOBALS += CJusticeMain::MainProperty($GLOBALS["codekeepers_block_id"]["setting
 					false
 				);?>
 			<?else:?>
-				<section class="breadcrumb-header" id="page" style="background-image: url(<?echo $APPLICATION->ShowProperty("image");?>)">
+				<section class="breadcrumb-header" id="page" style="background-image: url(<?echo SITE_TEMPLATE_PATH;?><?echo $APPLICATION->ShowProperty("image");?>)">
 					<div class="overlay"></div>
 					<div class="container">
 						<div class="row">

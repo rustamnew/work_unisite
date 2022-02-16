@@ -1,0 +1,6 @@
+<?
+$sSectionName = "Юристы";
+$arDirProperties = Array(
+
+);
+?>

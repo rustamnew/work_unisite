@@ -27,7 +27,7 @@ $this->setFrameMode(true);
 		"COUNT_ELEMENTS" => "Y",
 		"COUNT_ELEMENTS_FILTER" => "CNT_ACTIVE",
 		"FILTER_NAME" => "sectionsFilter",
-		"IBLOCK_ID" => $GLOBALS["codekeepers_block_id"]["catalog_goods_id"],
+		"IBLOCK_ID" => $arParams["IBLOCK_ID"],
 		"IBLOCK_TYPE" => "catalog",
 		"SECTION_CODE" => "",
 		"SECTION_FIELDS" => array(

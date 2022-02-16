@@ -378,6 +378,9 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
         <!-- :: CounterUp -->
 		<script src="<?=CUtil::GetAdditionalFileURL(SITE_TEMPLATE_PATH. '/assets/js/jquery.counterup.min.js')?>"></script>
         
+        <!-- :: fancy -->
+		<script src="<?=CUtil::GetAdditionalFileURL(SITE_TEMPLATE_PATH. '/assets/js/fancybox.umd.js')?>"></script>
+        
         <!-- :: Main JS -->
 		<script src="<?=CUtil::GetAdditionalFileURL(SITE_TEMPLATE_PATH. '/assets/js/main.js')?>"></script>
     </body>
