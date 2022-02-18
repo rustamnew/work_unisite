@@ -8,5 +8,6 @@ $MESS ['MFP_ALL_REQ'] = "(все необязательные)";
 $MESS ['MFP_NAME'] = "Имя";
 $MESS ['MFP_MESSAGE'] = "Сообщение";
 $MESS ['MFP_PHONE'] = "Телефон";
+$MESS ['MFP_SUBJECT'] = "Тема";
 $MESS ['MFP_EMAIL_TEMPLATES'] = "Почтовые шаблоны для отправки письма";
 ?>

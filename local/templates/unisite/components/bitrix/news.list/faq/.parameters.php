@@ -8,6 +8,7 @@ $arTemplateParameters = array(
 		"DEFAULT" => "one",
 		"VALUES" => array(
 			"one" => GetMessage("COLUMNS_ONE"),
+			"oneVideo" => GetMessage("COLUMNS_ONE_VIDEO"),
 			"two" => GetMessage("COLUMNS_TWO"),
 		)
 	),
@@ -15,6 +16,11 @@ $arTemplateParameters = array(
 		"NAME" => GetMessage("IMAGE"),
 		"TYPE" => "FILE",
 		"DEFAULT" => "",
+		"FD_TARGET" => "F",
+		"FD_EXT" => "jpg, gif, bmp, png, jpeg, webp",
+		"FD_UPLOAD" => true,
+		"FD_USE_MEDIALIB" => true,
+		"FD_MEDIALIB_TYPES" => Array('image')
 	),
 	"VIDEO_URL" => Array(
 		"NAME" => GetMessage("VIDEO_URL"),

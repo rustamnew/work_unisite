@@ -310,7 +310,15 @@ $GLOBALS += CJusticeMain::MainProperty($GLOBALS["codekeepers_block_id"]["setting
 
                         <?if($GLOBALS['global_info']['contacts_phone_show']):?>
                             <div class="contact-box">
-                                <i class="flaticon-call"></i>
+                                <div class="contact-box-icon">
+                                    <?$path = CFile::GetPath($GLOBALS['global_info']['icon_phone']);?>
+                                    <?if (stristr($path, '.svg')):?>
+                                        <?$svg_file = file_get_contents( $_SERVER["DOCUMENT_ROOT"].$path);?>
+                                        <?print_r($svg_file);?>
+                                    <?else:?>
+                                        <img src=<?$path?>>
+                                    <?endif;?>
+                                </div>
                                 <div class="box">
                                     <?if($GLOBALS['global_info']['contacts_phone1']):?>
                                         <a href="tel:<?=$GLOBALS['global_info']['contacts_phone1'];?>">
@@ -328,7 +336,15 @@ $GLOBALS += CJusticeMain::MainProperty($GLOBALS["codekeepers_block_id"]["setting
 
                         <?if($GLOBALS['global_info']['contacts_email_show']):?>
                             <div class="contact-box">
-                                <i class="flaticon-email"></i>
+                                <div class="contact-box-icon">
+                                    <?$path = CFile::GetPath($GLOBALS['global_info']['icon_email']);?>
+                                    <?if (stristr($path, '.svg')):?>
+                                        <?$svg_file = file_get_contents( $_SERVER["DOCUMENT_ROOT"].$path);?>
+                                        <?print_r($svg_file);?>
+                                    <?else:?>
+                                        <img src=<?$path?>>
+                                    <?endif;?>
+                                </div>
                                 <div class="box">
                                     <?if($GLOBALS['global_info']['contacts_email1']):?>
                                         <a href="mailto:<?=$GLOBALS['global_info']['contacts_email1'];?>">
@@ -346,7 +362,15 @@ $GLOBALS += CJusticeMain::MainProperty($GLOBALS["codekeepers_block_id"]["setting
 
                         <?if($GLOBALS['global_info']['contacts_address_show']):?>
                             <div class="contact-box">
-                                <i class="flaticon-location"></i>
+                                <div class="contact-box-icon">
+                                    <?$path = CFile::GetPath($GLOBALS['global_info']['icon_address']);?>
+                                    <?if (stristr($path, '.svg')):?>
+                                        <?$svg_file = file_get_contents( $_SERVER["DOCUMENT_ROOT"].$path);?>
+                                        <?print_r($svg_file);?>
+                                    <?else:?>
+                                        <img src=<?$path?>>
+                                    <?endif;?>
+                                </div>
                                 <div class="box">
                                     <?if($GLOBALS['global_info']['contacts_address1']):?>
                                         <p><?=$GLOBALS['global_info']['contacts_address1'];?></p>

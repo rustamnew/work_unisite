@@ -198,15 +198,222 @@ $(document).ready(function () {
 
     //Close
     let formWrap = document.querySelector('#summonedFormWrap')
-    let closePopupForm = (e) => {
-        if (e) {
-            e.preventDefault()
-        }
-        formWrap.classList.remove('active')
-    }
+    let summonedFormClose = document.querySelector('#summonedFormClose')
+
     formWrap.addEventListener('click', (e) => {
         if(e.target.id === 'summonedFormWrap') {
             closePopupForm(e)
         }
     })
+    summonedFormClose.addEventListener('click', (e) => {
+        closePopupForm(e)
+    })
+    
+
+    //Product detail info 
+    let productInfo = document.querySelector('.product-detail-text-additional')
+    let productSpecs = document.querySelector('.product-detail-text-specs')
+    let buttonInfo = document.querySelector('.product-detail-text-additional-button')
+    let buttonSpecs = document.querySelector('.product-detail-text-specs-button')
+
+    if (buttonSpecs) {
+        buttonSpecs.addEventListener('click', (e) => {
+            e.preventDefault()
+            productInfo.classList.remove('active')
+            productSpecs.classList.add('active')
+        })
+    }
+    if (buttonInfo) {
+        buttonInfo.addEventListener('click', (e) => {
+            e.preventDefault()
+            productSpecs.classList.remove('active')
+            productInfo.classList.add('active')
+        })
+    }
+    /*Custom Accordion*/
+    $(function() {
+        var Accordion = function(el, multiple) {
+            this.el = el || {};
+            this.multiple = multiple || false;
+            
+            var links = this.el.find('.link');
+            
+            links.on('click', {el: this.el, multiple: this.multiple}, this.dropdown)
+        }
+
+        Accordion.prototype.dropdown = function(e) {
+            var $el = e.data.el;
+                $this = $(this),
+                $next = $this.next();
+
+            $next.slideToggle();
+            $this.parent().toggleClass('open');
+
+            if (!e.data.multiple) {
+                $el.find('.submenu').not($next).slideUp().parent().removeClass('open');
+            };
+        }	
+        var accordion = new Accordion($('#accordion'), false);
+    });
+
+    /* Skills Data Value */
+    $(window).on('scroll', function () {
+        $('.skills .skill-box .skill-line .line').each(function () {
+            var toQuestionsAndSkills =
+                $(this).offset().top + $(this).outerHeight();
+            var goToBottom =
+                $(window).scrollTop() + $(window).height();
+            var widthValue = $(this).attr('data-value');
+            if (goToBottom > toQuestionsAndSkills) {
+                $(this).css({
+                    width: widthValue,
+                    transition: 'all 2s ease'
+                });
+            }
+        });
+    });
+
+
+    /*Ajax forms*/
+    let summonedSuccess = document.querySelector('#success-icon');
+
+    $("#feedback-form").submit(function (e) {
+        e.preventDefault()
+        let valide = true
+
+        if ($("#feedback-form").find(".captcha-wrap").length > 0) {
+            valide = false
+            let response = grecaptcha.getResponse()
+            if(response.length == 0) {
+                console.log('wrong')
+            } else {
+                valide = true
+            }
+	    } 
+        if (valide) {
+            $.ajax({
+                url: $(this).attr("action"),
+                data: $(this).serialize() + "&submit=Отправить",
+                type: 'POST',
+                success: function (data) {
+                    summonedSuccess.classList.add('active');
+                    $("#feedback-form")[0].reset();
+                },
+                error: function (data) {
+                    console.log(data);
+                }
+            });
+        }
+	})
+
+    $("#feedback-form-popup").submit(function (e) {
+        e.preventDefault()
+        let valide = true
+
+        if ($("#feedback-form-popup").find(".captcha-wrap").length > 0) {
+            valide = false
+            let response = grecaptcha.getResponse(1)
+            if(response.length == 0) {
+                console.log('wrong')
+            } else {
+                valide = true
+            }
+	    } 
+        if (valide) {
+            $.ajax({
+                url: $(this).attr("action"),
+                data: $(this).serialize() + "&submit=Отправить",
+                type: 'POST',
+                success: function (data) {
+                    summonedSuccess.classList.add('active');
+                    $("#feedback-form-popup")[0].reset();
+                },
+                error: function (data) {
+                    console.log(data);
+                }
+            });
+        }
+	})
+
+    $("#feedback-form-contacts").submit(function (e) {
+        e.preventDefault()
+        let valide = false
+
+        if ($("#feedback-form-contacts").find(".captcha-wrap").length > 0) {
+            valide = false
+            let response = grecaptcha.getResponse()
+            if(response.length == 0) {
+                console.log('wrong')
+            } else {
+                valide = true
+            }
+	    } else {
+            valide = true
+        }
+        if (valide) {
+            $.ajax({
+                url: $(this).attr("action"),
+                data: $(this).serialize() + "&submit=Отправить",
+                type: 'POST',
+                success: function (data) {
+                    summonedSuccess.classList.add('active');
+                    $("#feedback-form-contacts")[0].reset();
+                },
+                error: function (data) {
+                    console.log(data);
+                }
+            });
+        }
+	})
+
+    /*$("#feedback-form-short").submit(function (e) {
+        e.preventDefault()
+        let valide = true
+
+        if ($("#feedback-form-short").find(".captcha-wrap").length > 0) {
+            valide = false
+            let response = grecaptcha.getResponse()
+            if(response.length == 0) {
+                console.log('wrong')
+            } else {
+                valide = true
+            }
+	    } 
+    
+        if (valide) {
+            $.ajax({
+                url: $(this).attr("action"),
+                data: $(this).serialize() + "&submit=Отправить",
+                type: 'POST',
+                success: function (data) {
+                    summonedSuccess.classList.add('active');
+                    $("#feedback-form-short")[0].reset();
+                },
+                error: function (data) {
+                    console.log(data);
+                }
+            });
+        }
+	})*/
+
+    BX.ready(function(){
+        loader = BX('ajax-preloader-wrap');
+        BX.showWait = function(node, msg) {
+            BX.style(loader, 'display', 'block');
+            BX.addClass(loader, 'ajax-preloader--animated');
+        };
+        BX.closeWait = function(node, obMsg) {
+            BX.style(loader, 'display', 'none');
+            BX.removeClass(loader, 'ajax-preloader--animated');
+        };
+    });
 })
+
+
+let closePopupForm = (e) => {
+    if (e) {
+        e.preventDefault()
+    }
+    let formWrap = document.querySelector('#summonedFormWrap')
+    formWrap.classList.remove('active')
+}

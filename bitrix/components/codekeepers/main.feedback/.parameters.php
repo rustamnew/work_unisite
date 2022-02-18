@@ -39,6 +39,7 @@ $arComponentParameters = array(
 				"NONE" => GetMessage("MFP_ALL_REQ"), 
 				"NAME" => GetMessage("MFP_NAME"), 
 				"PHONE" => GetMessage("MFP_PHONE"), 
+				"SUBJECT" => GetMessage("MFP_SUBJECT"), 
 				"MESSAGE" => GetMessage("MFP_MESSAGE")
 			),
 			"DEFAULT"=>"", 

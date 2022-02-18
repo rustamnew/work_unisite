@@ -12,49 +12,93 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 ?>
-<section class="single-advisors py-100">
+<section class="team py-100-70">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-4">
-				<div class="advisors-box">
+				<div class="team-item">
 					<div class="img-box">
-						<img class="img-fluid" src="<?=$arResult["PREVIEW_PICTURE"]["SRC"]?>" alt="01 advisors">
-
-						<div class="img-box-hover">
-							<ul>
-								<?if($arResult["PROPERTIES"]["link_Vk"]["VALUE"]):?>
-									<li><a href="<?=SITE_DIR.$arResult["PROPERTIES"]["link_Vk"]["VALUE"];?>"><i class="fab fa-vk"></i></a></li>
-								<?endif;?>
-
-								<?if($arResult["PROPERTIES"]["link_Instagram"]["VALUE"]):?>
-									<li><a href="<?=SITE_DIR.$arResult["PROPERTIES"]["link_Instagram"]["VALUE"];?>"><i class="fab fa-instagram"></i></a></li>
-								<?endif;?>
-
-								<?if($arResult["PROPERTIES"]["link_Facebook"]["VALUE"]):?>
-									<li><a href="<?=SITE_DIR.$arResult["PROPERTIES"]["link_Facebook"]["VALUE"];?>"><i class="fab fa-facebook-f"></i></a></li>
-								<?endif;?>
-
-								<?if($arResult["PROPERTIES"]["link_Twitter"]["VALUE"]):?>
-									<li><a href="<?=SITE_DIR.$arResult["PROPERTIES"]["link_Twitter"]["VALUE"];?>"><i class="fab fa-twitter"></i></a></li>
-								<?endif;?>
-
-								<?if($arResult["PROPERTIES"]["link_Youtube"]["VALUE"]):?>
-									<li><a href="<?=SITE_DIR.$arResult["PROPERTIES"]["link_Youtube"]["VALUE"];?>"><i class="fab fa-youtube"></i></a></li>
-								<?endif;?>
-							</ul>
-						</div>
+						<img class="img-fluid" src="<?=$arResult["DETAIL_PICTURE"]["SRC"]?>" alt="01 advisors">
 					</div>
 					<div class="text-box text-center">
 						<h5><?=$arResult["NAME"]?></h5>
-						<span><?=$arResult["PROPERTIES"]["speciality"]["VALUE"];?></span>
+
+						<span>
+							<?$res = CIBlockSection::GetByID($arResult['IBLOCK_SECTION_ID']);
+							if($ar_res = $res->GetNext()):?>
+							<a href="<?echo $ar_res['SECTION_PAGE_URL'];?>"><?echo $ar_res['NAME'];?></a>
+							<?endif;?>
+						</span>
+
+						<ul>
+							<?if($arResult["PROPERTIES"]["social1_icon"]["VALUE"]):?>
+								<li><a href="<?=$arResult["PROPERTIES"]["social1_url"]["VALUE"];?>">
+									<?$path = CFile::GetPath($arResult['PROPERTIES']['social1_icon']['VALUE']);?>
+									<?if (stristr($path, '.svg')):?>
+										<?$svg_file = file_get_contents( $_SERVER["DOCUMENT_ROOT"].$path);?>
+										<?print_r($svg_file);?>
+									<?else:?>
+										<img src=<?$path?>>
+									<?endif;?>
+								</a></li>
+							<?endif;?>
+
+							<?if($arResult["PROPERTIES"]["social2_icon"]["VALUE"]):?>
+								<li><a href="<?=$arResult["PROPERTIES"]["social2_url"]["VALUE"];?>">
+									<?$path = CFile::GetPath($arResult['PROPERTIES']['social2_icon']['VALUE']);?>
+									<?if (stristr($path, '.svg')):?>
+										<?$svg_file = file_get_contents( $_SERVER["DOCUMENT_ROOT"].$path);?>
+										<?print_r($svg_file);?>
+									<?else:?>
+										<img src=<?$path?>>
+									<?endif;?>
+								</a></li>
+							<?endif;?>
+
+							<?if($arResult["PROPERTIES"]["social3_icon"]["VALUE"]):?>
+								<li><a href="<?=$arResult["PROPERTIES"]["social3_url"]["VALUE"];?>">
+									<?$path = CFile::GetPath($arResult['PROPERTIES']['social3_icon']['VALUE']);?>
+									<?if (stristr($path, '.svg')):?>
+										<?$svg_file = file_get_contents( $_SERVER["DOCUMENT_ROOT"].$path);?>
+										<?print_r($svg_file);?>
+									<?else:?>
+										<img src=<?$path?>>
+									<?endif;?>
+								</a></li>
+							<?endif;?>
+
+							<?if($arResult["PROPERTIES"]["social4_icon"]["VALUE"]):?>
+								<li><a href="<?=$arResult["PROPERTIES"]["social4_url"]["VALUE"];?>">
+									<?$path = CFile::GetPath($arResult['PROPERTIES']['social4_icon']['VALUE']);?>
+									<?if (stristr($path, '.svg')):?>
+										<?$svg_file = file_get_contents( $_SERVER["DOCUMENT_ROOT"].$path);?>
+										<?print_r($svg_file);?>
+									<?else:?>
+										<img src=<?$path?>>
+									<?endif;?>
+								</a></li>
+							<?endif;?>
+
+							<?if($arResult["PROPERTIES"]["social5_icon"]["VALUE"]):?>
+								<li><a href="<?=$arResult["PROPERTIES"]["social5_url"]["VALUE"];?>">
+									<?$path = CFile::GetPath($arResult['PROPERTIES']['social5_icon']['VALUE']);?>
+									<?if (stristr($path, '.svg')):?>
+										<?$svg_file = file_get_contents( $_SERVER["DOCUMENT_ROOT"].$path);?>
+										<?print_r($svg_file);?>
+									<?else:?>
+										<img src=<?$path?>>
+									<?endif;?>
+								</a></li>
+							<?endif;?>
+						</ul>
 					</div>
 				</div>
 			</div>
 			<div class="col-md-8">
 				<div class="introduction-advisors">
-					<p><?=$arResult["DETAIL_TEXT"]?></p>
-					
 					<p><?=$arResult["PREVIEW_TEXT"]?></p>
+
+					<p><?=$arResult["DETAIL_TEXT"]?></p>
 
 					<?if($arResult["PROPERTIES"]["skill_show"]["VALUE"] == 'Y'):?>
 						<h3><?=$arResult["PROPERTIES"]["skill_title"]["VALUE"];?></h3>

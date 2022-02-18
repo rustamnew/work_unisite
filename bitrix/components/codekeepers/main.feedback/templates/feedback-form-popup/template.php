@@ -31,7 +31,7 @@ foreach($arParams["REQUIRED_FIELDS"] as $item):?>
 
 <form action="<?=POST_FORM_ACTION_URI?>" method="POST" class="summonedForm" id="feedback-form-popup">
 <?=bitrix_sessid_post()?>
-	<a href="#" class="summonedFormClose" id="summonedFormClose" onClick="closeFancybox(event)">×</a>
+	<a href="#" class="summonedFormClose" id="summonedFormClose" onClick="closePopupForm(event)">×</a>
 	<h5><?echo GetMessage("FORM_SUBTITLE")?></h5>
 	<?
 		if(!empty($arResult["ERROR_MESSAGE"])) {

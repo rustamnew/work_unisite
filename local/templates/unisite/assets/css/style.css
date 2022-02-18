@@ -751,6 +751,17 @@ p {
     position: relative;
 }
 
+.contact-box-icon {
+    float: left;
+}
+.contact-box-icon img {
+    height: 24px;
+}
+.contact-box-icon svg {
+    height: 24px;
+    fill: #2652DC;
+}
+
 .menu-box .inner-menu .follow-us .icon-follow li {
     display: inline-block;
 }
@@ -1067,6 +1078,10 @@ p {
 }
 
 .about-2 .video-presentation {
+    margin-top: 0;
+}
+
+.faq .video-presentation {
     margin-top: 0;
 }
 
@@ -1681,6 +1696,53 @@ p {
     fill: #2652DC;
 }
 
+/* :: Skills */
+.skills .skill-box {
+    margin-bottom: 30px;
+}
+
+.skills .skill-box:last-of-type {
+    margin-bottom: 0;
+}
+
+.skills .skill-box .skill-top {
+    overflow: hidden;
+    margin-bottom: 8px;
+    line-height: 1;
+}
+
+.skills .skill-box .skill-top .name {
+    font-size: 13px;
+    line-height: 23px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: #262B3E;
+    display: inline-block;
+}
+
+.skills .skill-box .skill-top .number {
+    float: right;
+    text-transform: uppercase;
+    font-size: 13px;
+    line-height: 23px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: #262B3E;
+    display: inline-block;
+}
+
+.skills .skill-box .skill-line {
+    height: 10px;
+    width: 100%;
+    background-color: #F1F1F1;
+}
+
+.skills .skill-box .skill-line .line {
+    height: 100%;
+    width: 0%;
+    background-color: #C89D66;
+}
+
 /* :: FAQs And Quote */
 .faq-quote {
     position: relative;
@@ -1694,6 +1756,44 @@ p {
 
 .faq-quote .bg-section {
     height: 80%;
+}
+
+.contacts-quote {
+    padding: 100px 0;
+    position: relative;
+}
+.contacts-quote .bg-section {
+    height: 100%;
+}
+.contacts-quote .sec-title h3 {
+    color: #FFF;
+    margin-bottom: 10px;
+}
+.contacts-quote .contacts-item {
+    margin-bottom: 20px;
+}
+.contacts-quote .wrap-icon {
+    float: left;
+    margin-right: 20px;
+}
+.contacts-quote .wrap-icon svg {
+    height: 45px;
+    fill: #FFF;
+}
+.contacts-quote .wrap-icon img {
+    height: 45px;
+}
+.contacts-quote .wrap-info {
+    display: flex;
+    flex-direction: column;
+}
+.contacts-quote .wrap-info p {
+    color: #FFF;
+    margin-bottom: 6px;
+}
+.contacts-quote .wrap-info h4 {
+    color: #FFF;
+    margin-bottom: 14px;
 }
 
 /* :: FAQs */
@@ -1812,6 +1912,7 @@ p {
     position: relative;
     border: 0px solid transparent;
     font-family: "Raleway", sans-serif;
+    outline: none;
 }
 
 .quote .quote-item textarea {
@@ -1837,6 +1938,28 @@ p {
     margin-bottom: 30px;
     padding: 15px;
     background-color: #F9F9F9;
+}
+
+.contact {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+}
+
+.contact .sec-title {
+    margin-bottom: 0;
+}
+
+.contact .sec-title h3 {
+    color: #FFF;
+    margin-top: 0;
+}
+
+.contact .sec-title p {
+    color: #F1F1F1;
+    margin-bottom: 30px;
 }
 
 /* :: Pricing */
@@ -2434,6 +2557,20 @@ p {
 .call-back a {
     width: 100%;
     margin-top: 16px;
+}
+
+.call-back-item {
+    margin-bottom: 15px;
+}
+.call-back-icon {
+    margin-bottom: 15px;
+}
+.call-back svg {
+    height: 24px;
+    fill: #FFF;
+}
+.call-back img {
+    height: 24px;
 }
 
 .single-services-box h3 {
