@@ -20,10 +20,11 @@ $arTemplateParameters = array(
 	"SHOW_MODE" => Array(
 		"NAME" => GetMessage("SHOW_MODE"),
 		"TYPE" => "LIST",
-		"DEFAULT" => "normal",
+		"DEFAULT" => "one",
 		"VALUES" => array(
-			"normal" => GetMessage("SHOW_MODE_NORMAL"),
-			"slider" => GetMessage("SHOW_MODE_SLIDER"),
+			"one" => GetMessage("SHOW_MODE_ONE"),
+			"two" => GetMessage("SHOW_MODE_TWO"),
+			"three" => GetMessage("SHOW_MODE_THREE"),
 		)
 	),
 );

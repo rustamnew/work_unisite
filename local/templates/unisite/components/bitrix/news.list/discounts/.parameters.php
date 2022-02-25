@@ -17,14 +17,5 @@ $arTemplateParameters = array(
 		"TYPE" => "STRING",
 		"DEFAULT" => "",
 	),
-	"SHOW_MODE" => Array(
-		"NAME" => GetMessage("SHOW_MODE"),
-		"TYPE" => "LIST",
-		"DEFAULT" => "normal",
-		"VALUES" => array(
-			"normal" => GetMessage("SHOW_MODE_NORMAL"),
-			"slider" => GetMessage("SHOW_MODE_SLIDER"),
-		)
-	),
 );
 ?>

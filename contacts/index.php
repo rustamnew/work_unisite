@@ -34,8 +34,12 @@ $APPLICATION->SetPageProperty("image", "/assets/images/header/04_header.jpg");
 							</div>
 							<div class="wrap-info">
 								<h4><?=$GLOBALS['global_info']['contacts_title_phone'];?></h4>
-								<p><?=$GLOBALS['global_info']['contacts_phone1'];?></p>
-								<p><?=$GLOBALS['global_info']['contacts_phone2'];?></p>
+								<a href="tel:<?=$GLOBALS['global_info']['contacts_phone1'];?>">
+									<p><?=$GLOBALS['global_info']['contacts_phone1'];?></p>
+								</a>
+								<a href="tel:<?=$GLOBALS['global_info']['contacts_phone2'];?>">
+									<p><?=$GLOBALS['global_info']['contacts_phone2'];?></p>
+								</a>
 							</div>
 						</div>
 					<?endif;?>
@@ -55,8 +59,14 @@ $APPLICATION->SetPageProperty("image", "/assets/images/header/04_header.jpg");
 							</div>
 							<div class="wrap-info">
 								<h4><?=$GLOBALS['global_info']['contacts_title_email'];?></h4>
-								<p><?=$GLOBALS['global_info']['contacts_email1'];?></p>
-								<p><?=$GLOBALS['global_info']['contacts_email2'];?></p>
+
+								<a href="mailto:<?=$GLOBALS['global_info']['contacts_email1'];?>">
+									<p><?=$GLOBALS['global_info']['contacts_email1'];?></p>
+								</a>
+
+								<a href="mailto:<?=$GLOBALS['global_info']['contacts_email2'];?>">
+									<p><?=$GLOBALS['global_info']['contacts_email2'];?></p>
+								</a>
 							</div>
 						</div>
 					<?endif;?>

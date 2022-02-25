@@ -3,14 +3,14 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetPageProperty("image", "/assets/images/header/04_header.jpg");
 $APPLICATION->SetTitle("Блог");
 ?>
-<section class="bolg py-100 section">
+<section class="blog area py-100-70">
 	<div class="container">
 		<div class="row">
 
 			<div class="col-lg-4">
 				<?$APPLICATION->IncludeComponent(
 					"bitrix:news.list", 
-					"social-sidebar", 
+					"sidebar-social", 
 					array(
 						"ACTIVE_DATE_FORMAT" => "d.m.Y",
 						"ADD_SECTIONS_CHAIN" => "N",

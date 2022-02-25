@@ -17,7 +17,7 @@ $this->setFrameMode(true);
 	<div class="container">
 		<div class="row">
 			<?foreach($arResult["SECTIONS"] as $arItem):?>
-				<div class="col-md-3">
+				<div class="col-md-3 col-6">
 					<div class="shop-item">
 						<a href="<?=$arItem["SECTION_PAGE_URL"]?>" >
 							<div class="item-img">

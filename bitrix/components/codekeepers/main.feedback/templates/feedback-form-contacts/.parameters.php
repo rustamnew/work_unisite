@@ -47,5 +47,10 @@ $arTemplateParameters = array(
 		"TYPE" => "STRING",
 		"DEFAULT" => "",
 	),
+	"SUBMIT_TEXT" => Array(
+		"NAME" => GetMessage("SUBMIT_TEXT"),
+		"TYPE" => "STRING",
+		"DEFAULT" => "",
+	),
 );
 ?>

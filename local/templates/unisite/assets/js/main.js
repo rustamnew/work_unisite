@@ -80,10 +80,10 @@
     });
     
     // :: Counter Up Js
-    $('.counter').counterUp({
+    /*$('.counter').counterUp({
         delay: 10,
         time: 1000
-    });
+    });*/
     
     // :: Add Class Active On Go To Header
     $(window).on('scroll', function () {
@@ -169,6 +169,118 @@
             }
         }
     });
+
+    // :: OWL Carousel
+    $('.owl-testimonial-3').owlCarousel({
+        loop: false,
+        nav: false,
+        dots: false,
+        autoplay: true,
+        autoplayTimeout: 4000,
+        smartSpeed: 1000,
+        margin: 10,
+        center: false,
+        autoplayHoverPause: true,
+        mouseDrag: true,
+        touchDrag: true,
+        responsive: {
+            0: {
+                items: 1
+            },
+            768: {
+                items: 2
+            },
+            991: {
+                items: 3
+            }
+        }
+    });
+    $('.owl-testimonial-2').owlCarousel({
+        loop: false,
+        nav: false,
+        dots: false,
+        autoplay: true,
+        autoplayTimeout: 4000,
+        smartSpeed: 1000,
+        margin: 10,
+        center: true,
+        autoplayHoverPause: true,
+        mouseDrag: true,
+        touchDrag: true,
+        items: 1,
+        responsive: {
+            0: {
+                items: 1,
+				center: true
+            },
+            768: {
+                items: 2,
+				center: false
+            }
+        }
+    });
+    $('.owl-advisors').owlCarousel({
+        loop: false,
+        dots: false,
+        margin: 30,
+        smartSpeed: 1000,
+        autoplay: 2000,
+        nav: false,
+        autoplayHoverPause: true,
+        mouseDrag: true,
+        touchDrag: true,
+        responsive: {
+            0: {
+                items: 1
+            },
+            768: {
+                items: 2
+            },
+            991: {
+                items: 3
+            }
+        }
+    });
+    $('.owl-advisors-2').owlCarousel({
+        loop: false,
+        margin: 30,
+        smartSpeed: 1000,
+        autoplay: 2000,
+        nav: false,
+        autoplayHoverPause: true,
+        mouseDrag: true,
+        touchDrag: true,
+        dots: false,
+        responsive: {
+            0: {
+                items: 1
+            },
+            768: {
+                items: 2
+            }
+        }
+    });
+    $('.owl-promo-2').owlCarousel({
+        loop: false,
+        nav: false,
+        dots: false,
+        autoplay: true,
+        autoplayTimeout: 4000,
+        smartSpeed: 1000,
+        margin: 10,
+        center: false,
+        autoplayHoverPause: true,
+        mouseDrag: true,
+        touchDrag: true,
+        responsive: {
+            0: {
+                items: 1
+            },
+            768: {
+                items: 2
+            }
+        }
+    });
     
     // :: Add Class Active To Navbar (.gallery .list-name-gallery li)
     $('.case-study-list .list-name-case li').on('click', function () {
@@ -215,9 +327,12 @@ $(document).ready(function () {
     let productSpecs = document.querySelector('.product-detail-text-specs')
     let buttonInfo = document.querySelector('.product-detail-text-additional-button')
     let buttonSpecs = document.querySelector('.product-detail-text-specs-button')
+    
 
     if (buttonSpecs) {
+        console.log(buttonSpecs)
         buttonSpecs.addEventListener('click', (e) => {
+            console.log(buttonSpecs)
             e.preventDefault()
             productInfo.classList.remove('active')
             productSpecs.classList.add('active')
@@ -279,7 +394,18 @@ $(document).ready(function () {
 
     $("#feedback-form").submit(function (e) {
         e.preventDefault()
+
         let valide = true
+
+        let submitButton = $("#feedback-form").find(".form-submit-button")[0]
+        submitButton.disabled = true
+
+        setTimeout(() => {
+            submitButton.disabled = false;
+            valide = true
+        }, 4000)
+
+        
 
         if ($("#feedback-form").find(".captcha-wrap").length > 0) {
             valide = false
@@ -304,11 +430,20 @@ $(document).ready(function () {
                 }
             });
         }
+        valide = false
 	})
 
     $("#feedback-form-popup").submit(function (e) {
         e.preventDefault()
         let valide = true
+
+        let submitButton = $("#feedback-form-popup").find(".form-submit-button")[0]
+        submitButton.disabled = true
+
+        setTimeout(() => {
+            submitButton.disabled = false;
+            valide = true
+        }, 4000)
 
         if ($("#feedback-form-popup").find(".captcha-wrap").length > 0) {
             valide = false
@@ -337,7 +472,15 @@ $(document).ready(function () {
 
     $("#feedback-form-contacts").submit(function (e) {
         e.preventDefault()
-        let valide = false
+        let valide = true
+
+        let submitButton = $("#feedback-form-contacts").find(".form-submit-button")[0]
+        submitButton.disabled = true
+
+        setTimeout(() => {
+            submitButton.disabled = false;
+            valide = true
+        }, 4000)
 
         if ($("#feedback-form-contacts").find(".captcha-wrap").length > 0) {
             valide = false
@@ -366,35 +509,6 @@ $(document).ready(function () {
         }
 	})
 
-    /*$("#feedback-form-short").submit(function (e) {
-        e.preventDefault()
-        let valide = true
-
-        if ($("#feedback-form-short").find(".captcha-wrap").length > 0) {
-            valide = false
-            let response = grecaptcha.getResponse()
-            if(response.length == 0) {
-                console.log('wrong')
-            } else {
-                valide = true
-            }
-	    } 
-    
-        if (valide) {
-            $.ajax({
-                url: $(this).attr("action"),
-                data: $(this).serialize() + "&submit=Отправить",
-                type: 'POST',
-                success: function (data) {
-                    summonedSuccess.classList.add('active');
-                    $("#feedback-form-short")[0].reset();
-                },
-                error: function (data) {
-                    console.log(data);
-                }
-            });
-        }
-	})*/
 
     BX.ready(function(){
         loader = BX('ajax-preloader-wrap');
@@ -406,6 +520,14 @@ $(document).ready(function () {
             BX.style(loader, 'display', 'none');
             BX.removeClass(loader, 'ajax-preloader--animated');
         };
+    });
+
+
+    $(document).click(function (e) {
+        if ($(e.target).is('#success-icon') || $(e.target).is('#success-icon__icon')) {
+            e.preventDefault()
+            summonedSuccess.classList.remove('active');
+        }
     });
 })
 

@@ -33,6 +33,7 @@ $GLOBALS += CJusticeMain::MainProperty($GLOBALS["codekeepers_block_id"]["setting
         <!-- :: Required Meta Tags -->
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width; initial-scale=1">
 
 		<title><?$APPLICATION->ShowTitle(false);?></title>
 
@@ -51,7 +52,7 @@ $GLOBALS += CJusticeMain::MainProperty($GLOBALS["codekeepers_block_id"]["setting
 		<?$APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH. '/assets/fonts/fontawesome/css/all.min.css');?>
         
         <!-- :: FlatIcon -->
-		<?$APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH. '/assets/css/flaticon.css');?>
+		<?$APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH. '/assets/fonts/flaticon/css/flaticon.css');?>
         
         <!-- :: OWL Carousel -->
 		<?$APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH. '/assets/css/owl.carousel.min.css');?>
@@ -65,6 +66,11 @@ $GLOBALS += CJusticeMain::MainProperty($GLOBALS["codekeepers_block_id"]["setting
 
         <!-- :: Transitions -->
 		<?$APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH. '/assets/css/transitions.css');?>
+
+        <!-- :: Animations -->
+		<?$APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH. '/assets/css/animate.css');?>
+
+
 
         <!-- :: Style CSS -->
 		<?$APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH. '/assets/css/style.css');?>
@@ -94,54 +100,70 @@ $GLOBALS += CJusticeMain::MainProperty($GLOBALS["codekeepers_block_id"]["setting
 				</div>
 			</div>
 			
-			<!-- :: Top Navbar
-			<div class="top-nav-bar">
-				<div class="container">
-					<div class="top-nav-bar-box d-flex align-items-center justify-content-between">
-						<ul class="info">
-
-							<?/*if($GLOBALS['global_info']['contacts_email1'] and $GLOBALS['global_info']['contacts_email_show']):?>
-								<li><span><?=GetMessage("HEADER_EMAIL_TITLE");?></span> <?=$GLOBALS['global_info']['contacts_email1'];?></li>
-							<?endif;?>
-
-							<?if($GLOBALS['global_info']['contacts_phone1'] and $GLOBALS['global_info']['contacts_phone_show']):?>
-								<li><span><?=GetMessage("HEADER_PHONE_TITLE");?></span> <?=$GLOBALS['global_info']['contacts_phone1'];?></li>
-							<?endif;*/?>
-								
-							////<li><span>Email:</span> Shibin El-Kom , El-Menoufia, Egypt</li>////
-						</ul>
-						<ul class="icon-follow">
-							<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-							<li><a href="#"><i class="fab fa-twitter"></i></a></li>
-							<li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-							<li><a href="#"><i class="fas fa-rss"></i></a></li>
-						</ul>
-					</div>
-				</div>
-			</div>-->
-			
 			<!-- :: Navbar -->
-            <header class="navs">
+            <?
+            $headertype = $GLOBALS['global_info']['header_type'];
+            $property_enums = CIBlockPropertyEnum::GetList(Array(), Array("IBLOCK_ID"=> 1, "PROPERTY_ID"=> 53));
+            while($enum_fields = $property_enums->GetNext())
+            {
+                if($headertype == $enum_fields["ID"]) {
+                    $headertype = trim($enum_fields["VALUE"]);
+                }
+            
+            }
+            ?>
+
+            <header class="navs <?if($headertype == 'Вариант 2'):?>navs-2<?elseif($headertype == 'Вариант 3'):?>navs-3<?endif;?>">
                 <div class="nav-top">
                     <div class="container">
                         <div class="nav-top-box d-flex align-items-center justify-content-between">
                             <ul class="info">
                                 <?if($GLOBALS['global_info']['contacts_email1'] and $GLOBALS['global_info']['contacts_email_show']):?>
-                                    <li>
+                                    <li <?if($GLOBALS['global_info']['contacts_email2']):?>class="has-dropdown"<?endif;?>>
                                         <a href="mailto:<?=$GLOBALS['global_info']['contacts_email1'];?>">
                                             <?=GetMessage("HEADER_EMAIL_TITLE");?><?=$GLOBALS['global_info']['contacts_email1'];?>
                                         </a>
+
+                                        <?if($GLOBALS['global_info']['contacts_email2']):?>
+                                            <ul>
+                                                <li>
+                                                    <a href="mailto:<?=$GLOBALS['global_info']['contacts_email1'];?>">
+                                                        <?=GetMessage("HEADER_EMAIL_TITLE");?><?=$GLOBALS['global_info']['contacts_email1'];?>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="mailto:<?=$GLOBALS['global_info']['contacts_email2'];?>">
+                                                        <?=GetMessage("HEADER_EMAIL_TITLE");?><?=$GLOBALS['global_info']['contacts_email2'];?>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        <?endif;?>
                                     </li>
                                 <?endif;?>
                                 <?if($GLOBALS['global_info']['contacts_phone1'] and $GLOBALS['global_info']['contacts_phone_show']):?>
-                                    <li>
+                                    <li <?if($GLOBALS['global_info']['contacts_phone2']):?>class="has-dropdown"<?endif;?>>
                                         <a href="tel:<?=$GLOBALS['global_info']['contacts_phone1'];?>">
                                             <?=GetMessage("HEADER_PHONE_TITLE");?><?=$GLOBALS['global_info']['contacts_phone1'];?>
                                         </a>
+
+                                        <?if($GLOBALS['global_info']['contacts_phone2']):?>
+                                            <ul>
+                                                <li>
+                                                    <a href="tel:<?=$GLOBALS['global_info']['contacts_phone1'];?>">
+                                                        <?=GetMessage("HEADER_PHONE_TITLE");?><?=$GLOBALS['global_info']['contacts_phone1'];?>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="tel:<?=$GLOBALS['global_info']['contacts_phone2'];?>">
+                                                        <?=GetMessage("HEADER_PHONE_TITLE");?><?=$GLOBALS['global_info']['contacts_phone2'];?>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        <?endif;?>
                                     </li>
                                 <?endif;?>
                             </ul>
-                            <ul>
+                            <ul class="header-buttons">
                                 <li><a class="icon open-search-box" href="#"><i class="fas fa-search"></i></a></li>
 
                                 <?if($GLOBALS['global_info']['header_extra_show']):?>
@@ -321,14 +343,18 @@ $GLOBALS += CJusticeMain::MainProperty($GLOBALS["codekeepers_block_id"]["setting
                                 </div>
                                 <div class="box">
                                     <?if($GLOBALS['global_info']['contacts_phone1']):?>
-                                        <a href="tel:<?=$GLOBALS['global_info']['contacts_phone1'];?>">
-                                            <p><?=$GLOBALS['global_info']['contacts_phone1'];?></p>
-                                        </a>
+                                        <p>
+                                            <a href="tel:<?=$GLOBALS['global_info']['contacts_phone1'];?>">
+                                                <?=$GLOBALS['global_info']['contacts_phone1'];?>
+                                            </a>
+                                        </p>
                                     <?endif;?>
                                     <?if($GLOBALS['global_info']['contacts_phone2']):?>
-                                        <a href="tel:<?=$GLOBALS['global_info']['contacts_phone2'];?>">
-                                            <p><?=$GLOBALS['global_info']['contacts_phone2'];?></p>
-                                        </a>
+                                        <p>
+                                            <a href="tel:<?=$GLOBALS['global_info']['contacts_phone2'];?>">
+                                                <?=$GLOBALS['global_info']['contacts_phone2'];?>
+                                            </a>
+                                        </p>
                                     <?endif;?>
                                 </div>
                             </div>
@@ -347,14 +373,18 @@ $GLOBALS += CJusticeMain::MainProperty($GLOBALS["codekeepers_block_id"]["setting
                                 </div>
                                 <div class="box">
                                     <?if($GLOBALS['global_info']['contacts_email1']):?>
-                                        <a href="mailto:<?=$GLOBALS['global_info']['contacts_email1'];?>">
-                                            <p><?=$GLOBALS['global_info']['contacts_email1'];?></p>
-                                        </a>
+                                        <p>
+                                            <a href="mailto:<?=$GLOBALS['global_info']['contacts_email1'];?>">
+                                                <?=$GLOBALS['global_info']['contacts_email1'];?>
+                                            </a>
+                                        </p>
                                     <?endif;?>
                                     <?if($GLOBALS['global_info']['contacts_email2']):?>
-                                        <a href="mailto:<?=$GLOBALS['global_info']['contacts_email2'];?>">
-                                            <p><?=$GLOBALS['global_info']['contacts_email2'];?></p>
-                                        </a>
+                                        <p>
+                                            <a href="mailto:<?=$GLOBALS['global_info']['contacts_email2'];?>">
+                                                <?=$GLOBALS['global_info']['contacts_email2'];?>
+                                            </a>
+                                        </p>
                                     <?endif;?>
                                 </div>
                             </div>

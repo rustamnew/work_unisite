@@ -96,13 +96,13 @@ $this->setFrameMode(true);
 			</div>
 			<div class="col-md-8">
 				<div class="introduction-advisors">
-					<p><?=$arResult["PREVIEW_TEXT"]?></p>
+					<div class="detail-item-content"><?=$arResult["PREVIEW_TEXT"]?></div>
 
-					<p><?=$arResult["DETAIL_TEXT"]?></p>
+					<div class="detail-item-content"><?=$arResult["DETAIL_TEXT"]?></div>
 
 					<?if($arResult["PROPERTIES"]["skill_show"]["VALUE"] == 'Y'):?>
-						<h3><?=$arResult["PROPERTIES"]["skill_title"]["VALUE"];?></h3>
 						<div class="skills">
+							<h3><?=$arResult["PROPERTIES"]["skill_title"]["VALUE"];?></h3>
 
 							<?if($arResult["PROPERTIES"]["skill1name"]["VALUE"]):?>
 								<div class="skill-box">

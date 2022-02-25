@@ -383,5 +383,9 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
         
         <!-- :: Main JS -->
 		<script src="<?=CUtil::GetAdditionalFileURL(SITE_TEMPLATE_PATH. '/assets/js/main.js')?>"></script>
+
+		
+		<!--Theme Colors-->
+		<?require($_SERVER["DOCUMENT_ROOT"].SITE_TEMPLATE_PATH."/assets/css/theme-style.php");?>
     </body>
 </html>

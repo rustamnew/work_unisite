@@ -102,7 +102,6 @@ $this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayB
 									<img src=<?$path?>>
 								<?endif;?>
 							</div>
-							<i class="flaticon-summit"></i>
 							<div class="content">
 								<div class="counter"><?=$arItem["PROPERTIES"]["counter_value"]["VALUE"];?></div>
 								<div class="counter-name"><?=$arItem["PROPERTIES"]["counter_title"]["VALUE"];?></div>

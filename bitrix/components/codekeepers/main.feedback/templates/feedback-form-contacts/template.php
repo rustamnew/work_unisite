@@ -37,7 +37,7 @@ foreach($arParams["REQUIRED_FIELDS"] as $item):?>
 
 
 <div class="quote">
-	<form action="<?=POST_FORM_ACTION_URI?>" method="POST" class="form-submit contact-form" id="feedback-form-contacts">
+	<form action="<?=POST_FORM_ACTION_URI?>" method="POST" class="form-submit contact-form" id="feedback-form-contacts" name="form_contacts">
 		<?=bitrix_sessid_post()?>
 		<div class="sec-title">
 			<h3><?=$arParams["FORM_TITLE"]?></h3>
@@ -50,11 +50,10 @@ foreach($arParams["REQUIRED_FIELDS"] as $item):?>
 		<div class="quote-item">
 			<label><?=$arParams["LABEL_PHONE"]?></label>
 			<input type="text" name="user_phone" value="" class="email" placeholder="<?=$arParams["PLACEHOLDER_PHONE"]?>" <?if($phoneReq):?>required<?endif;?>>
-
 		</div>
 		<div class="quote-item">
 			<label><?=$arParams["LABEL_SUBJECT"]?></label>
-			<input type="text" name="subject" placeholder="<?=$arParams["PLACEHOLDER_SUBJECT"]?>">
+			<input type="text" name="user_subject" placeholder="<?=$arParams["PLACEHOLDER_SUBJECT"]?>">
 
 		</div>
 		<div class="quote-item">
@@ -71,7 +70,7 @@ foreach($arParams["REQUIRED_FIELDS"] as $item):?>
 			<input type="hidden" name="FORM_SECTION" value="<?=$arParams["FORM_SECTION"]?>">
 			<input type="hidden" name="FORM_TYPE" value="<?=$arParams["FORM_TYPE"]?>">
 			
-			<input type="submit" name="submit" class="flat-button-arrow" value="<?=$arParams['SUBMIT_TEXT']?>"></input>
+			<input type="submit" name="submit" class="form-submit-button" value="<?=$arParams['SUBMIT_TEXT']?>"></input>
 		</div>
 	</form>
 </div>

@@ -14,12 +14,11 @@ $this->setFrameMode(true);
 ?>
 
 
-<div class="single-practice-areas-box">
+<div class="single-services-box">
 	<div class="img-box">
 		<img class="img-fluid" src="<?=$arResult["DETAIL_PICTURE"]["SRC"]?>" alt="01 Blog">
-		<ul>
-			<li><a class="price-detail"><?=$arResult["PROPERTIES"]["price"]["VALUE"]?></a></li>
-		</ul>
+		<span class="price-detail"><?=$arResult["PROPERTIES"]["price"]["VALUE"]?></span>
+		
 	</div>
 	<h3><?=$arResult["NAME"]?></h3>
 	<p class="services-detail-text"><?=$arResult["DETAIL_TEXT"]?></p>
@@ -166,55 +165,95 @@ $this->setFrameMode(true);
 		</div>
 	<?endif;?>
 
-	<?if($arResult["PROPERTIES"]["lawyer"]["VALUE"]):?>
-		<h4 class="linked-items-title"><?=GetMessage("LAWYER_TITLE")?></h4>
+	<?if($arResult["PROPERTIES"]["team"]["VALUE"]):?>
+		<h4 class="linked-items-title"><?=GetMessage("TEAM_TITLE")?></h4>
 		<div class="row">
-			<div class="owl-advisors-2 owl-carousel owl-theme">
-				<?foreach($arResult["PROPERTIES"]["lawyer"]["VALUE"] as $itemId):?>
-					<?
-					$res = CIBlockElement::GetByID($itemId);
-					if($item = $res->GetNext()) {
-					$props = CIBlockElement::GetByID($itemId)->GetNextElement()->GetProperties();?>
+			<?foreach($arResult["PROPERTIES"]["team"]["VALUE"] as $itemId):?>
+				<?
+				$res = CIBlockElement::GetByID($itemId);
+				if($item = $res->GetNext()) {
+				$props = CIBlockElement::GetByID($itemId)->GetNextElement()->GetProperties();?>
 
-					<div class="advisors-item">
-						<div class="advisors-box">
+				<div class="owl-advisors-2 owl-carousel owl-theme">
+					<div class="team-item">
 							<div class="img-box">
-								<img class="img-fluid" src="<?echo CFile::GetPath($item["PREVIEW_PICTURE"]);?>" alt="advisor">
-								<div class="img-box-hover">
-									<ul>
-										<?if($props["link_Vk"]["VALUE"]):?>
-											<li><a href="<?=$props["link_Vk"]["VALUE"];?>"><i class="fab fa-vk"></i></a></li>
-										<?endif;?>
-
-										<?if($props["link_Instagram"]["VALUE"]):?>
-											<li><a href="<?=$props["link_Instagram"]["VALUE"];?>"><i class="fab fa-instagram"></i></a></li>
-										<?endif;?>
-
-										<?if($props["link_Facebook"]["VALUE"]):?>
-											<li><a href="<?=$props["link_Facebook"]["VALUE"];?>"><i class="fab fa-facebook-f"></i></a></li>
-										<?endif;?>
-
-										<?if($props["link_Twitter"]["VALUE"]):?>
-											<li><a href="<?=$props["link_Twitter"]["VALUE"];?>"><i class="fab fa-twitter"></i></a></li>
-										<?endif;?>
-
-										<?if($props["link_Youtube"]["VALUE"]):?>
-											<li><a href="<?=$props["link_Youtube"]["VALUE"];?>"><i class="fab fa-youtube"></i></a></li>
-										<?endif;?>
-									</ul>
-								</div>
+								<img class="img-fluid" src="<?echo CFile::GetPath($item["PREVIEW_PICTURE"]);?>" alt="01 Team">
 							</div>
-							
 							<div class="text-box text-center">
-								<a href="<?=$item["DETAIL_PAGE_URL"]?>"><h5><?=$item["NAME"]?></h5></a>
-								<span><?=$props["speciality"]["VALUE"];?></span>
+								<a href="<?=$ar_res["DETAIL_PAGE_URL"]?>"><h5><?=$item["NAME"]?></h5></a>
+								<span>
+									<?$res = CIBlockSection::GetByID($item['IBLOCK_SECTION_ID']);
+									if($ar_res = $res->GetNext()):?>
+									<a href="<?echo $ar_res['SECTION_PAGE_URL'];?>"><?echo $ar_res['NAME'];?></a>
+									<?endif;?>
+								</span>
+								<ul>
+									<?if($props["social1_icon"]["VALUE"]):?>
+										<li><a href="<?=$props["social1_url"]["VALUE"];?>">
+											<?$path = CFile::GetPath($props['social1_icon']['VALUE']);?>
+											<?if (stristr($path, '.svg')):?>
+												<?$svg_file = file_get_contents( $_SERVER["DOCUMENT_ROOT"].$path);?>
+												<?print_r($svg_file);?>
+											<?else:?>
+												<img src=<?$path?>>
+											<?endif;?>
+										</a></li>
+									<?endif;?>
+
+									<?if($props["social2_icon"]["VALUE"]):?>
+										<li><a href="<?=$props["social2_url"]["VALUE"];?>">
+											<?$path = CFile::GetPath($props['social2_icon']['VALUE']);?>
+											<?if (stristr($path, '.svg')):?>
+												<?$svg_file = file_get_contents( $_SERVER["DOCUMENT_ROOT"].$path);?>
+												<?print_r($svg_file);?>
+											<?else:?>
+												<img src=<?$path?>>
+											<?endif;?>
+										</a></li>
+									<?endif;?>
+
+									<?if($props["social3_icon"]["VALUE"]):?>
+										<li><a href="<?=$props["social3_url"]["VALUE"];?>">
+											<?$path = CFile::GetPath($props['social3_icon']['VALUE']);?>
+											<?if (stristr($path, '.svg')):?>
+												<?$svg_file = file_get_contents( $_SERVER["DOCUMENT_ROOT"].$path);?>
+												<?print_r($svg_file);?>
+											<?else:?>
+												<img src=<?$path?>>
+											<?endif;?>
+										</a></li>
+									<?endif;?>
+
+									<?if($props["social4_icon"]["VALUE"]):?>
+										<li><a href="<?=$props["social4_url"]["VALUE"];?>">
+											<?$path = CFile::GetPath($props['social4_icon']['VALUE']);?>
+											<?if (stristr($path, '.svg')):?>
+												<?$svg_file = file_get_contents( $_SERVER["DOCUMENT_ROOT"].$path);?>
+												<?print_r($svg_file);?>
+											<?else:?>
+												<img src=<?$path?>>
+											<?endif;?>
+										</a></li>
+									<?endif;?>
+
+									<?if($props["social5_icon"]["VALUE"]):?>
+										<li><a href="<?=$props["social5_url"]["VALUE"];?>">
+											<?$path = CFile::GetPath($props['social5_icon']['VALUE']);?>
+											<?if (stristr($path, '.svg')):?>
+												<?$svg_file = file_get_contents( $_SERVER["DOCUMENT_ROOT"].$path);?>
+												<?print_r($svg_file);?>
+											<?else:?>
+												<img src=<?$path?>>
+											<?endif;?>
+										</a></li>
+									<?endif;?>
+								</ul>
 							</div>
 						</div>
-					</div>
 
 					<?};?>
-				<?endforeach;?>
-			</div>
+				</div>
+			<?endforeach;?>
 		</div>
 	<?endif;?>
 </div>

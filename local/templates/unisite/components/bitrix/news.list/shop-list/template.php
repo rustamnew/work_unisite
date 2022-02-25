@@ -22,7 +22,7 @@ $this->setFrameMode(true);
 				$this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
 				?>
 
-				<div class="col-md-6 col-lg-4">
+				<div class="col-md-6 col-lg-4 col-6">
 					<div class="shop-item" id="<?=$this->GetEditAreaId($arItem['ID']);?>">
 						<div class="item-img">
 							<img class="img-fluid" src="<?=$arItem["PREVIEW_PICTURE"]["SRC"]?>" alt="01 Shop">

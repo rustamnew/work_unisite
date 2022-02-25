@@ -5,7 +5,7 @@ $APPLICATION->SetTitle("Проекты");
 ?>
 
 
-<section class="bolg py-100 section">
+<section class="bolg projects">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-4">

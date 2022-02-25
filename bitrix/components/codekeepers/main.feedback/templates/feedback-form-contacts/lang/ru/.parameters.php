@@ -8,4 +8,5 @@ $MESS ['PLACEHOLDER_NAME'] = "Placeholder Имя";
 $MESS ['PLACEHOLDER_PHONE'] = "Placeholder Телефон";
 $MESS ['PLACEHOLDER_SUBJECT'] = "Placeholder Тема";
 $MESS ['PLACEHOLDER_MESSAGE'] = "Placeholder Сообщение";
+$MESS ['SUBMIT_TEXT'] = "Текст кнопки";
 ?>

@@ -21,7 +21,7 @@ $this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayB
 ?>
 
 
-<section class="contact py-100" style="background-image: url(<?=$arItem["PREVIEW_PICTURE"]["SRC"]?>)">
+<section class="call-to-action py-100" style="background-image: url(<?=$arItem["PREVIEW_PICTURE"]["SRC"]?>)">
 	<div class="overlay"></div>
 	<div class="container" id="<?=$this->GetEditAreaId($arItem['ID']);?>">
 		<div class="row">
