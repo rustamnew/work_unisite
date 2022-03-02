@@ -21,7 +21,7 @@ $APPLICATION->SetTitle("Результаты поиска");
 		"FILTER_NAME" => "",
 		"NO_WORD_LOGIC" => "N",
 		"PAGER_SHOW_ALWAYS" => "Y",
-		"PAGER_TEMPLATE" => "bootstrap_v4",
+		"PAGER_TEMPLATE" => "bootstrap_v4_modified",
 		"PAGER_TITLE" => "Результаты поиска",
 		"PAGE_RESULT_COUNT" => "10",
 		"RESTART" => "N",
@@ -40,7 +40,10 @@ $APPLICATION->SetTitle("Результаты поиска");
 		"arrFILTER_iblock_content" => array(
 			0 => "all",
 		),
-		"SEARCH_FAIL" => "По вашему запросу ничего не найдено"
+		"SEARCH_FAIL" => "По вашему запросу ничего не найдено",
+		"arrFILTER_iblock_catalog" => array(
+			0 => "all",
+		)
 	),
 	false
 );?><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

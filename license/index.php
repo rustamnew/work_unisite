@@ -75,7 +75,7 @@ $APPLICATION->SetTitle("Сертификаты");
 
 <?$APPLICATION->IncludeComponent(
 	"bitrix:news.list", 
-	"call-to-action", 
+	"banner_call-to-action", 
 	array(
 		"ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"ADD_SECTIONS_CHAIN" => "N",
@@ -83,7 +83,7 @@ $APPLICATION->SetTitle("Сертификаты");
 		"AJAX_OPTION_ADDITIONAL" => "",
 		"AJAX_OPTION_HISTORY" => "N",
 		"AJAX_OPTION_JUMP" => "N",
-		"AJAX_OPTION_STYLE" => "N",
+		"AJAX_OPTION_STYLE" => "Y",
 		"CACHE_FILTER" => "N",
 		"CACHE_GROUPS" => "Y",
 		"CACHE_TIME" => "36000000",
@@ -102,8 +102,8 @@ $APPLICATION->SetTitle("Сертификаты");
 		),
 		"FILTER_NAME" => "",
 		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
-		"IBLOCK_ID" => $GLOBALS["codekeepers_block_id"]["content_call-to-action_id"],
-		"IBLOCK_TYPE" => "content",
+		"IBLOCK_ID" => $GLOBALS["codekeepers_block_id"]["banners_banner_call-to-action_id"],
+		"IBLOCK_TYPE" => "banners",
 		"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
 		"INCLUDE_SUBSECTIONS" => "N",
 		"MESSAGE_404" => "",
@@ -119,9 +119,11 @@ $APPLICATION->SetTitle("Сертификаты");
 		"PARENT_SECTION_CODE" => "",
 		"PREVIEW_TRUNCATE_LEN" => "",
 		"PROPERTY_CODE" => array(
-			0 => "subtitle",
-			1 => "text",
-			2 => "",
+			0 => "title",
+			1 => "subtitle",
+			2 => "url",
+			3 => "text",
+			4 => "",
 		),
 		"SET_BROWSER_TITLE" => "N",
 		"SET_LAST_MODIFIED" => "N",
@@ -131,18 +133,18 @@ $APPLICATION->SetTitle("Сертификаты");
 		"SET_TITLE" => "N",
 		"SHOW_404" => "N",
 		"SORT_BY1" => "SORT",
-		"SORT_BY2" => "",
+		"SORT_BY2" => "NAME",
 		"SORT_ORDER1" => "ASC",
-		"SORT_ORDER2" => "",
+		"SORT_ORDER2" => "ASC",
 		"STRICT_SECTION_CHECK" => "N",
-		"COMPONENT_TEMPLATE" => "call-to-action"
+		"COMPONENT_TEMPLATE" => "banner_call-to-action"
 	),
 	false
 );?>
 
 <?$APPLICATION->IncludeComponent(
 	"bitrix:news.list", 
-	"team-list-slider", 
+	"team-list", 
 	array(
 		"ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"ADD_SECTIONS_CHAIN" => "N",
@@ -202,10 +204,11 @@ $APPLICATION->SetTitle("Сертификаты");
 		"SORT_ORDER1" => "ASC",
 		"SORT_ORDER2" => "ASC",
 		"STRICT_SECTION_CHECK" => "N",
-		"COMPONENT_TEMPLATE" => "team-list-slider",
+		"COMPONENT_TEMPLATE" => "team-list",
 		"NAME" => "Команда",
 		"TITLE" => "Наши специалисты",
-		"SUBTITLE" => "Решения принимаются профессионалами. Мы гарантируем высокое качество оказания услуг."
+		"SUBTITLE" => "Решения принимаются профессионалами. Мы гарантируем высокое качество оказания услуг.",
+		"SHOW_MODE" => "slider"
 	),
 	false
 );?>

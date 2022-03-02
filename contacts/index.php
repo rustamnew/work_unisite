@@ -95,36 +95,43 @@ $APPLICATION->SetPageProperty("image", "/assets/images/header/04_header.jpg");
             </div>
             <div class="col-lg-6">
                 <?$APPLICATION->IncludeComponent(
-                    "codekeepers:main.feedback", 
-                    "feedback-form-contacts", 
-                    array(
-                        "AJAX_MODE" => "Y",
-                        "AJAX_OPTION_SHADOW" => "N",
-                        "AJAX_OPTION_JUMP" => "N",
-                        "AJAX_OPTION_HISTORY" => "N",
-
-                        "REQUIRED_FIELDS" => array(
-                        ),
-                        "EVENT_MESSAGE_ID" => array(
-                        ),
-
-                        "FORM_PAGE" => "Контакты",
-                        "FORM_TYPE" => "Форма на странице контактов",
-                        "NAME" => "Форма обратной связи",
-                        "TITLE" => "Миссия нашей компании предоставить лучший сервис для клиентов",
-                        "SUBTITLE" => "Решения принимаются профессионалами. Мы гарантируем высокое качество оказания услуг.",
-                        "FORM_TITLE" => "Оставьте заявку",
-                        "LABEL_NAME" => "Имя",
-                        "LABEL_PHONE" => "Телефон",
-                        "LABEL_SUBJECT" => "Тема",
-                        "LABEL_MESSAGE" => "Сообщение",
-                        "PLACEHOLDER_NAME" => "Ваше имя",
-                        "PLACEHOLDER_PHONE" => "Ваш телефон",
-                        "PLACEHOLDER_SUBJECT" => "Тема сообщения",
-                        "PLACEHOLDER_MESSAGE" => "Ваше сообщение"
-                    ),
-                    false
-                );?>
+	"codekeepers:main.feedback", 
+	"feedback-form-contacts", 
+	array(
+		"AJAX_MODE" => "Y",
+		"AJAX_OPTION_SHADOW" => "N",
+		"AJAX_OPTION_JUMP" => "N",
+		"AJAX_OPTION_HISTORY" => "N",
+		"REQUIRED_FIELDS" => array(
+			0 => "NAME",
+			1 => "PHONE",
+			2 => "SUBJECT",
+			3 => "MESSAGE",
+		),
+		"EVENT_MESSAGE_ID" => array(
+		),
+		"FORM_PAGE" => "Контакты",
+		"FORM_TYPE" => "Форма на странице контактов",
+		"NAME" => "Форма обратной связи",
+		"TITLE" => "Миссия нашей компании предоставить лучший сервис для клиентов",
+		"SUBTITLE" => "Решения принимаются профессионалами. Мы гарантируем высокое качество оказания услуг.",
+		"FORM_TITLE" => "Оставьте заявку",
+		"LABEL_NAME" => "Имя",
+		"LABEL_PHONE" => "Телефон",
+		"LABEL_SUBJECT" => "Тема",
+		"LABEL_MESSAGE" => "Сообщение",
+		"PLACEHOLDER_NAME" => "Ваше имя",
+		"PLACEHOLDER_PHONE" => "Ваш телефон",
+		"PLACEHOLDER_SUBJECT" => "Тема сообщения",
+		"PLACEHOLDER_MESSAGE" => "Ваше сообщение",
+		"COMPONENT_TEMPLATE" => "feedback-form-contacts",
+		"USE_CAPTCHA" => "Y",
+		"OK_TEXT" => "Спасибо, ваше сообщение принято.",
+		"EMAIL_TO" => "1rustamnew1@gmail.com",
+		"SUBMIT_TEXT" => "Отправить"
+	),
+	false
+);?>
 
             </div>
         </div>

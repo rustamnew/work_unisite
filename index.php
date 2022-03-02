@@ -1,8 +1,7 @@
 <?
 require($_SERVER['DOCUMENT_ROOT'].'/bitrix/header.php');
 $APPLICATION->SetTitle("Главная");
-?>
-<?$APPLICATION->IncludeComponent(
+?><?$APPLICATION->IncludeComponent(
 	"bitrix:news.list",
 	"features1",
 	Array(
@@ -54,6 +53,7 @@ $APPLICATION->SetTitle("Главная");
 		"SET_STATUS_404" => "N",
 		"SET_TITLE" => "N",
 		"SHOW_404" => "N",
+		"SHOW_MODE" => "two",
 		"SORT_BY1" => "SORT",
 		"SORT_BY2" => "NAME",
 		"SORT_ORDER1" => "ASC",
@@ -119,7 +119,6 @@ $APPLICATION->SetTitle("Главная");
 		"STRICT_SECTION_CHECK" => "N"
 	)
 );?>
-
 <?$APPLICATION->IncludeComponent(
 	"bitrix:news.list",
 	"projects",
@@ -182,9 +181,9 @@ $APPLICATION->SetTitle("Главная");
 	)
 );?>
 <?$APPLICATION->IncludeComponent(
-	"bitrix:news.list", 
-	"banner_call-to-action", 
-	array(
+	"bitrix:news.list",
+	"banner_call-to-action",
+	Array(
 		"ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"ADD_SECTIONS_CHAIN" => "N",
 		"AJAX_MODE" => "N",
@@ -197,6 +196,7 @@ $APPLICATION->SetTitle("Главная");
 		"CACHE_TIME" => "36000000",
 		"CACHE_TYPE" => "A",
 		"CHECK_DATES" => "Y",
+		"COMPONENT_TEMPLATE" => "banner_call-to-action",
 		"DETAIL_URL" => "",
 		"DISPLAY_BOTTOM_PAGER" => "N",
 		"DISPLAY_DATE" => "N",
@@ -204,10 +204,7 @@ $APPLICATION->SetTitle("Главная");
 		"DISPLAY_PICTURE" => "N",
 		"DISPLAY_PREVIEW_TEXT" => "N",
 		"DISPLAY_TOP_PAGER" => "N",
-		"FIELD_CODE" => array(
-			0 => "",
-			1 => "",
-		),
+		"FIELD_CODE" => array(0=>"",1=>"",),
 		"FILTER_NAME" => "",
 		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
 		"IBLOCK_ID" => $GLOBALS["codekeepers_block_id"]["banners_banner_call-to-action_id"],
@@ -226,13 +223,66 @@ $APPLICATION->SetTitle("Главная");
 		"PARENT_SECTION" => "",
 		"PARENT_SECTION_CODE" => "",
 		"PREVIEW_TRUNCATE_LEN" => "",
-		"PROPERTY_CODE" => array(
-			0 => "title",
-			1 => "subtitle",
-			2 => "url",
-			3 => "text",
-			4 => "",
-		),
+		"PROPERTY_CODE" => array(0=>"title",1=>"subtitle",2=>"url",3=>"text",4=>"",),
+		"SET_BROWSER_TITLE" => "N",
+		"SET_LAST_MODIFIED" => "N",
+		"SET_META_DESCRIPTION" => "N",
+		"SET_META_KEYWORDS" => "N",
+		"SET_STATUS_404" => "N",
+		"SET_TITLE" => "N",
+		"SHOW_404" => "N",
+		"SORT_BY1" => "SORT",
+		"SORT_BY2" => "NAME",
+		"SORT_ORDER1" => "ASC",
+		"SORT_ORDER2" => "ASC",
+		"STRICT_SECTION_CHECK" => "N"
+	)
+);?>
+<?$APPLICATION->IncludeComponent(
+	"bitrix:news.list",
+	"pricing",
+	Array(
+		"ACTIVE_DATE_FORMAT" => "d.m.Y",
+		"ADD_SECTIONS_CHAIN" => "N",
+		"AJAX_MODE" => "N",
+		"AJAX_OPTION_ADDITIONAL" => "",
+		"AJAX_OPTION_HISTORY" => "N",
+		"AJAX_OPTION_JUMP" => "N",
+		"AJAX_OPTION_STYLE" => "Y",
+		"CACHE_FILTER" => "N",
+		"CACHE_GROUPS" => "Y",
+		"CACHE_TIME" => "36000000",
+		"CACHE_TYPE" => "A",
+		"CHECK_DATES" => "Y",
+		"COMPONENT_TEMPLATE" => ".default",
+		"DETAIL_URL" => "",
+		"DISPLAY_BOTTOM_PAGER" => "N",
+		"DISPLAY_DATE" => "N",
+		"DISPLAY_NAME" => "N",
+		"DISPLAY_PICTURE" => "N",
+		"DISPLAY_PREVIEW_TEXT" => "N",
+		"DISPLAY_TOP_PAGER" => "N",
+		"FIELD_CODE" => array(0=>"",1=>"",),
+		"FILTER_NAME" => "",
+		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
+		"IBLOCK_ID" => $GLOBALS["codekeepers_block_id"]["content_pricing_id"],
+		"IBLOCK_TYPE" => "content",
+		"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+		"INCLUDE_SUBSECTIONS" => "N",
+		"MESSAGE_404" => "",
+		"NAME" => "Наши цены",
+		"NEWS_COUNT" => "3",
+		"PAGER_BASE_LINK_ENABLE" => "N",
+		"PAGER_DESC_NUMBERING" => "N",
+		"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+		"PAGER_SHOW_ALL" => "N",
+		"PAGER_SHOW_ALWAYS" => "N",
+		"PAGER_TEMPLATE" => ".default",
+		"PAGER_TITLE" => "Новости",
+		"PARENT_SECTION" => "",
+		"PARENT_SECTION_CODE" => "",
+		"PREVIEW_TRUNCATE_LEN" => "",
+		"PROPERTY_CODE" => array(0=>"currency",1=>"feature1",2=>"feature2",3=>"feature3",4=>"feature4",5=>"feature5",6=>"period",7=>"subtitle",8=>"color",9=>"",),
 		"SET_BROWSER_TITLE" => "N",
 		"SET_LAST_MODIFIED" => "N",
 		"SET_META_DESCRIPTION" => "N",
@@ -245,85 +295,9 @@ $APPLICATION->SetTitle("Главная");
 		"SORT_ORDER1" => "ASC",
 		"SORT_ORDER2" => "ASC",
 		"STRICT_SECTION_CHECK" => "N",
-		"COMPONENT_TEMPLATE" => "banner_call-to-action"
-	),
-	false
-);?>
-<?$APPLICATION->IncludeComponent(
-	"bitrix:news.list", 
-	"pricing", 
-	Array(
-		"ACTIVE_DATE_FORMAT" => "d.m.Y",	
-		"ADD_SECTIONS_CHAIN" => "N",	
-		"AJAX_MODE" => "N",	
-		"AJAX_OPTION_ADDITIONAL" => "",	
-		"AJAX_OPTION_HISTORY" => "N",	
-		"AJAX_OPTION_JUMP" => "N",	
-		"AJAX_OPTION_STYLE" => "Y",	
-		"CACHE_FILTER" => "N",	
-		"CACHE_GROUPS" => "Y",	
-		"CACHE_TIME" => "36000000",	
-		"CACHE_TYPE" => "A",	
-		"CHECK_DATES" => "Y",	
-		"DETAIL_URL" => "",	
-		"DISPLAY_BOTTOM_PAGER" => "N",	
-		"DISPLAY_DATE" => "N",	
-		"DISPLAY_NAME" => "N",	
-		"DISPLAY_PICTURE" => "N",	
-		"DISPLAY_PREVIEW_TEXT" => "N",	
-		"DISPLAY_TOP_PAGER" => "N",	
-		"FIELD_CODE" => array(	
-			0 => "",
-			1 => "",
-		),
-		"FILTER_NAME" => "",	
-		"HIDE_LINK_WHEN_NO_DETAIL" => "N",	
-		"IBLOCK_ID" => $GLOBALS["codekeepers_block_id"]["content_pricing_id"],	
-		"IBLOCK_TYPE" => "content",	
-		"INCLUDE_IBLOCK_INTO_CHAIN" => "N",	
-		"INCLUDE_SUBSECTIONS" => "N",	
-		"MESSAGE_404" => "",	
-		"NEWS_COUNT" => "3",	
-		"PAGER_BASE_LINK_ENABLE" => "N",	
-		"PAGER_DESC_NUMBERING" => "N",	
-		"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",	
-		"PAGER_SHOW_ALL" => "N",	
-		"PAGER_SHOW_ALWAYS" => "N",	
-		"PAGER_TEMPLATE" => ".default",	
-		"PAGER_TITLE" => "Новости",	
-		"PARENT_SECTION" => "",	
-		"PARENT_SECTION_CODE" => "",	
-		"PREVIEW_TRUNCATE_LEN" => "",	
-		"PROPERTY_CODE" => array(	
-			0 => "currency",
-			1 => "feature1",
-			2 => "feature2",
-			3 => "feature3",
-			4 => "feature4",
-			5 => "feature5",
-			6 => "period",
-			7 => "subtitle",
-			8 => "color",
-			9 => "",
-		),
-		"SET_BROWSER_TITLE" => "N",	
-		"SET_LAST_MODIFIED" => "N",	
-		"SET_META_DESCRIPTION" => "N",	
-		"SET_META_KEYWORDS" => "N",	
-		"SET_STATUS_404" => "N",	
-		"SET_TITLE" => "N",	
-		"SHOW_404" => "N",	
-		"SORT_BY1" => "SORT",	
-		"SORT_BY2" => "NAME",	
-		"SORT_ORDER1" => "ASC",	
-		"SORT_ORDER2" => "ASC",	
-		"STRICT_SECTION_CHECK" => "N",	
-		"COMPONENT_TEMPLATE" => ".default",
-		"NAME" => "Наши цены",
-		"TITLE" => "Начните сейчас",
-		"SUBTITLE" => "Решения принимаются профессионалами. Мы гарантируем высокое качество оказания услуг."
-	),
-	false
+		"SUBTITLE" => "Решения принимаются профессионалами. Мы гарантируем высокое качество оказания услуг.",
+		"TITLE" => "Начните сейчас"
+	)
 );?>
 <?$APPLICATION->IncludeComponent(
 	"bitrix:news.list",
@@ -384,9 +358,9 @@ $APPLICATION->SetTitle("Главная");
 	)
 );?>
 <?$APPLICATION->IncludeComponent(
-	"bitrix:news.list", 
-	"team-list", 
-	array(
+	"bitrix:news.list",
+	"team-list",
+	Array(
 		"ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"ADD_SECTIONS_CHAIN" => "N",
 		"AJAX_MODE" => "N",
@@ -399,6 +373,7 @@ $APPLICATION->SetTitle("Главная");
 		"CACHE_TIME" => "36000000",
 		"CACHE_TYPE" => "A",
 		"CHECK_DATES" => "Y",
+		"COMPONENT_TEMPLATE" => "team-list",
 		"DETAIL_URL" => "",
 		"DISPLAY_BOTTOM_PAGER" => "N",
 		"DISPLAY_DATE" => "N",
@@ -406,10 +381,7 @@ $APPLICATION->SetTitle("Главная");
 		"DISPLAY_PICTURE" => "N",
 		"DISPLAY_PREVIEW_TEXT" => "N",
 		"DISPLAY_TOP_PAGER" => "N",
-		"FIELD_CODE" => array(
-			0 => "",
-			1 => "",
-		),
+		"FIELD_CODE" => array(0=>"",1=>"",),
 		"FILTER_NAME" => "",
 		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
 		"IBLOCK_ID" => $GLOBALS["codekeepers_block_id"]["content_team_id"],
@@ -417,6 +389,7 @@ $APPLICATION->SetTitle("Главная");
 		"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
 		"INCLUDE_SUBSECTIONS" => "N",
 		"MESSAGE_404" => "",
+		"NAME" => "Команда",
 		"NEWS_COUNT" => "12",
 		"PAGER_BASE_LINK_ENABLE" => "N",
 		"PAGER_DESC_NUMBERING" => "N",
@@ -428,11 +401,7 @@ $APPLICATION->SetTitle("Главная");
 		"PARENT_SECTION" => "",
 		"PARENT_SECTION_CODE" => "",
 		"PREVIEW_TRUNCATE_LEN" => "",
-		"PROPERTY_CODE" => array(
-			0 => "",
-			1 => "title",
-			2 => "",
-		),
+		"PROPERTY_CODE" => array(0=>"",1=>"title",2=>"",),
 		"SET_BROWSER_TITLE" => "N",
 		"SET_LAST_MODIFIED" => "N",
 		"SET_META_DESCRIPTION" => "N",
@@ -440,85 +409,137 @@ $APPLICATION->SetTitle("Главная");
 		"SET_STATUS_404" => "N",
 		"SET_TITLE" => "N",
 		"SHOW_404" => "N",
+		"SHOW_MODE" => "slider",
 		"SORT_BY1" => "SORT",
 		"SORT_BY2" => "ID",
 		"SORT_ORDER1" => "ASC",
 		"SORT_ORDER2" => "ASC",
 		"STRICT_SECTION_CHECK" => "N",
-		"COMPONENT_TEMPLATE" => "team-list",
-		"NAME" => "Команда",
-		"TITLE" => "Наши специалисты",
 		"SUBTITLE" => "Решения принимаются профессионалами. Мы гарантируем высокое качество оказания услуг.",
-		"SHOW_MODE" => "slider"
-	),
-	false
+		"TITLE" => "Наши специалисты"
+	)
 );?>
 <?$APPLICATION->IncludeComponent(
-	"bitrix:news.list", 
-	"reviews", 
-	array(
-		"COMPONENT_TEMPLATE" => "reviews",
-		"IBLOCK_TYPE" => "content",
-		"IBLOCK_ID" => $GLOBALS["codekeepers_block_id"]["content_reviews_id"],
-		"NEWS_COUNT" => "6",
-		"SORT_BY1" => "SORT",
-		"SORT_ORDER1" => "ASC",
-		"SORT_BY2" => "ACTIVE_FROM",
-		"SORT_ORDER2" => "DESC",
-		"FILTER_NAME" => "",
-		"FIELD_CODE" => array(
-			0 => "",
-			1 => "",
-		),
-		"PROPERTY_CODE" => array(
-			0 => "position",
-			1 => "",
-		),
-		"CHECK_DATES" => "Y",
-		"DETAIL_URL" => "",
+	"bitrix:news.list",
+	"reviews",
+	Array(
+		"ACTIVE_DATE_FORMAT" => "d.m.Y",
+		"ADD_SECTIONS_CHAIN" => "N",
 		"AJAX_MODE" => "N",
+		"AJAX_OPTION_ADDITIONAL" => "",
+		"AJAX_OPTION_HISTORY" => "N",
 		"AJAX_OPTION_JUMP" => "N",
 		"AJAX_OPTION_STYLE" => "Y",
-		"AJAX_OPTION_HISTORY" => "N",
-		"AJAX_OPTION_ADDITIONAL" => "",
-		"CACHE_TYPE" => "A",
-		"CACHE_TIME" => "36000000",
 		"CACHE_FILTER" => "N",
 		"CACHE_GROUPS" => "Y",
-		"PREVIEW_TRUNCATE_LEN" => "",
-		"ACTIVE_DATE_FORMAT" => "d.m.Y",
-		"SET_TITLE" => "N",
-		"SET_BROWSER_TITLE" => "N",
-		"SET_META_KEYWORDS" => "N",
-		"SET_META_DESCRIPTION" => "N",
-		"SET_LAST_MODIFIED" => "N",
-		"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
-		"ADD_SECTIONS_CHAIN" => "N",
-		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
-		"PARENT_SECTION" => "",
-		"PARENT_SECTION_CODE" => "",
-		"INCLUDE_SUBSECTIONS" => "N",
-		"STRICT_SECTION_CHECK" => "N",
+		"CACHE_TIME" => "36000000",
+		"CACHE_TYPE" => "A",
+		"CHECK_DATES" => "Y",
+		"COMPONENT_TEMPLATE" => "reviews",
+		"DETAIL_URL" => "",
+		"DISPLAY_BOTTOM_PAGER" => "N",
 		"DISPLAY_DATE" => "N",
 		"DISPLAY_NAME" => "N",
 		"DISPLAY_PICTURE" => "N",
 		"DISPLAY_PREVIEW_TEXT" => "N",
-		"PAGER_TEMPLATE" => ".default",
 		"DISPLAY_TOP_PAGER" => "N",
-		"DISPLAY_BOTTOM_PAGER" => "N",
-		"PAGER_TITLE" => "Новости",
-		"PAGER_SHOW_ALWAYS" => "N",
+		"FIELD_CODE" => array(0=>"",1=>"",),
+		"FILTER_NAME" => "",
+		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
+		"IBLOCK_ID" => $GLOBALS["codekeepers_block_id"]["content_reviews_id"],
+		"IBLOCK_TYPE" => "content",
+		"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+		"INCLUDE_SUBSECTIONS" => "N",
+		"MESSAGE_404" => "",
+		"MINIMIZE_TITLE" => "N",
+		"NAME" => "Отзывы",
+		"NEWS_COUNT" => "6",
+		"PAGER_BASE_LINK_ENABLE" => "N",
 		"PAGER_DESC_NUMBERING" => "N",
 		"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
 		"PAGER_SHOW_ALL" => "N",
-		"PAGER_BASE_LINK_ENABLE" => "N",
+		"PAGER_SHOW_ALWAYS" => "N",
+		"PAGER_TEMPLATE" => ".default",
+		"PAGER_TITLE" => "Новости",
+		"PARENT_SECTION" => "",
+		"PARENT_SECTION_CODE" => "",
+		"PREVIEW_TRUNCATE_LEN" => "",
+		"PROPERTY_CODE" => array(0=>"",1=>"position",2=>"",),
+		"SET_BROWSER_TITLE" => "N",
+		"SET_LAST_MODIFIED" => "N",
+		"SET_META_DESCRIPTION" => "N",
+		"SET_META_KEYWORDS" => "N",
 		"SET_STATUS_404" => "N",
+		"SET_TITLE" => "N",
 		"SHOW_404" => "N",
-		"MESSAGE_404" => "",
-		"NAME" => "Отзывы",
-		"TITLE" => "Что говорят наши клиенты",
+		"SHOW_MODE" => "two",
+		"SORT_BY1" => "SORT",
+		"SORT_BY2" => "ACTIVE_FROM",
+		"SORT_ORDER1" => "ASC",
+		"SORT_ORDER2" => "DESC",
+		"STRICT_SECTION_CHECK" => "N",
 		"SUBTITLE" => "Решения принимаются профессионалами. Мы гарантируем высокое качество оказания услуг.",
-		"MINIMIZE_TITLE" => "N"
+		"TITLE" => "Что говорят наши клиенты"
+	)
+);?><?$APPLICATION->IncludeComponent(
+	"codekeepers:main.feedback",
+	"feedback-form",
+	Array(
+		"AJAX_MODE" => "Y",
+		"COMPONENT_TEMPLATE" => "feedback-form",
+		"EMAIL_TO" => "",
+		"EVENT_MESSAGE_ID" => array(0=>"7",),
+		"LABEL_MESSAGE" => "Сообщение",
+		"LABEL_NAME" => "Имя",
+		"LABEL_PHONE" => "Телефон",
+		"LABEL_SUBJECT" => "Тема",
+		"NAME" => "Связаться с нами",
+		"OK_TEXT" => "Спасибо, ваше сообщение принято.",
+		"PLACEHOLDER_MESSAGE" => "Ваше сообщение",
+		"PLACEHOLDER_NAME" => "Ваше имя",
+		"PLACEHOLDER_PHONE" => "Ваш телефон",
+		"PLACEHOLDER_SUBJECT" => "Тема сообщения",
+		"REQUIRED_FIELDS" => array(0=>"NAME",1=>"PHONE",2=>"SUBJECT",3=>"MESSAGE",),
+		"SUBMIT_TEXT" => "Отправить",
+		"SUBTITLE" => "Решения принимаются профессионалами. Мы гарантируем высокое качество оказания услуг.",
+		"TITLE" => "Форма обратной связи",
+		"USE_CAPTCHA" => "Y"
+	)
+);?>
+<?$APPLICATION->IncludeComponent(
+	"bitrix:catalog.section.list", 
+	"services-block", 
+	array(
+		"ADD_SECTIONS_CHAIN" => "N",
+		"CACHE_FILTER" => "N",
+		"CACHE_GROUPS" => "Y",
+		"CACHE_TIME" => "36000000",
+		"CACHE_TYPE" => "A",
+		"COUNT_ELEMENTS" => "Y",
+		"COUNT_ELEMENTS_FILTER" => "CNT_ACTIVE",
+		"FILTER_NAME" => "sectionsFilter",
+		"IBLOCK_ID" => $GLOBALS["codekeepers_block_id"]["content_services_id"],
+		"IBLOCK_TYPE" => "content",
+		"SECTION_CODE" => "",
+		"SECTION_FIELDS" => array(
+			0 => "",
+			1 => "",
+		),
+		"SECTION_ID" => $_REQUEST["SECTION_ID"],
+		"SECTION_URL" => "",
+		"SECTION_USER_FIELDS" => array(
+			0 => "",
+			1 => "UF_ICON",
+			2 => "",
+		),
+		"SHOW_PARENT_NAME" => "Y",
+		"TOP_DEPTH" => "2",
+		"VIEW_MODE" => "LINE",
+		"NAME" => "Услуги",
+		"TITLE" => "Что мы можем предложить",
+		"SUBTITLE" => "Решения принимаются профессионалами. Мы гарантируем высокое качество оказания услуг.",
+		"TEXT_LENGTH" => "105",
+		"COMPONENT_TEMPLATE" => "services-block"
 	),
 	false
 );?>
@@ -533,11 +554,7 @@ $APPLICATION->SetTitle("Главная");
 		"MAP_HEIGHT" => "500",
 		"MAP_ID" => "",
 		"MAP_WIDTH" => "100%",
-		"OPTIONS" => array(
-			0 => "ENABLE_DBLCLICK_ZOOM",
-			1 => "ENABLE_RIGHT_MAGNIFIER",
-			2 => "ENABLE_DRAGGING",
-		)
+		"OPTIONS" => array(0=>"ENABLE_DBLCLICK_ZOOM",1=>"ENABLE_RIGHT_MAGNIFIER",2=>"ENABLE_DRAGGING",)
 	)
 );?>
 <?$APPLICATION->IncludeComponent(
@@ -600,11 +617,6 @@ $APPLICATION->SetTitle("Главная");
 		"SUBTITLE" => "Решения принимаются профессионалами. Мы гарантируем высокое качество оказания услуг.",
 		"TITLE" => "Лента новостей"
 	)
-);?>
-
-
-
-
-<?
+);?><?
 require($_SERVER['DOCUMENT_ROOT'].'/bitrix/footer.php');
 ?>

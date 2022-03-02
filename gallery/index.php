@@ -1,10 +1,10 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetPageProperty("image", "/assets/images/header/04_header.jpg");
-$APPLICATION->SetTitle("Вопросы и ответы");
+$APPLICATION->SetTitle("Галерея");
 ?><?$APPLICATION->IncludeComponent(
 	"bitrix:news.list", 
-	"faq", 
+	"gallery", 
 	array(
 		"ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"ADD_SECTIONS_CHAIN" => "N",
@@ -19,19 +19,20 @@ $APPLICATION->SetTitle("Вопросы и ответы");
 		"CACHE_TYPE" => "A",
 		"CHECK_DATES" => "Y",
 		"DETAIL_URL" => "",
-		"DISPLAY_BOTTOM_PAGER" => "N",
+		"DISPLAY_BOTTOM_PAGER" => "Y",
 		"DISPLAY_DATE" => "N",
 		"DISPLAY_NAME" => "N",
 		"DISPLAY_PICTURE" => "N",
 		"DISPLAY_PREVIEW_TEXT" => "N",
 		"DISPLAY_TOP_PAGER" => "N",
 		"FIELD_CODE" => array(
-			0 => "",
-			1 => "",
+			0 => "PREVIEW_PICTURE",
+			1 => "DETAIL_PICTURE",
+			2 => "",
 		),
 		"FILTER_NAME" => "",
 		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
-		"IBLOCK_ID" => "9",
+		"IBLOCK_ID" => "21",
 		"IBLOCK_TYPE" => "content",
 		"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
 		"INCLUDE_SUBSECTIONS" => "N",
@@ -63,13 +64,13 @@ $APPLICATION->SetTitle("Вопросы и ответы");
 		"SORT_ORDER1" => "ASC",
 		"SORT_ORDER2" => "ASC",
 		"STRICT_SECTION_CHECK" => "N",
-		"COMPONENT_TEMPLATE" => "faq",
-		"COLUMNS" => "one",
-		"NAME" => "Вопросы и ответы",
-		"TITLE" => "Опытные специалисты для повышения эффективности вашего бизнеса",
+		"COMPONENT_TEMPLATE" => "gallery",
+		"NAME" => "Галерея",
+		"TITLE" => "Фотографии",
 		"SUBTITLE" => "Решения принимаются профессионалами. Мы гарантируем высокое качество оказания услуг.",
-		"IMAGE" => "/local/templates/unisite/assets/images/video-presentation/01_video-presentation.jpg",
-		"VIDEO_URL" => "https://youtu.be/1zClcu8ud5A"
+		"SHOW_MODE" => "two",
+		"WIDTH" => "400px",
+		"MARGIN" => "10px"
 	),
 	false
 );?><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

@@ -1,10 +1,10 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetPageProperty("image", "/assets/images/header/04_header.jpg");
-$APPLICATION->SetTitle("Вопросы и ответы");
+$APPLICATION->SetTitle("Отзывы");
 ?><?$APPLICATION->IncludeComponent(
 	"bitrix:news.list", 
-	"faq", 
+	"reviews", 
 	array(
 		"ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"ADD_SECTIONS_CHAIN" => "N",
@@ -19,11 +19,11 @@ $APPLICATION->SetTitle("Вопросы и ответы");
 		"CACHE_TYPE" => "A",
 		"CHECK_DATES" => "Y",
 		"DETAIL_URL" => "",
-		"DISPLAY_BOTTOM_PAGER" => "N",
-		"DISPLAY_DATE" => "N",
-		"DISPLAY_NAME" => "N",
-		"DISPLAY_PICTURE" => "N",
-		"DISPLAY_PREVIEW_TEXT" => "N",
+		"DISPLAY_BOTTOM_PAGER" => "Y",
+		"DISPLAY_DATE" => "Y",
+		"DISPLAY_NAME" => "Y",
+		"DISPLAY_PICTURE" => "Y",
+		"DISPLAY_PREVIEW_TEXT" => "Y",
 		"DISPLAY_TOP_PAGER" => "N",
 		"FIELD_CODE" => array(
 			0 => "",
@@ -31,11 +31,12 @@ $APPLICATION->SetTitle("Вопросы и ответы");
 		),
 		"FILTER_NAME" => "",
 		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
-		"IBLOCK_ID" => "9",
-		"IBLOCK_TYPE" => "content",
+		"IBLOCK_ID" => "19",
+		"IBLOCK_TYPE" => "-",
 		"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
 		"INCLUDE_SUBSECTIONS" => "N",
 		"MESSAGE_404" => "",
+		"NAME" => "",
 		"NEWS_COUNT" => "20",
 		"PAGER_BASE_LINK_ENABLE" => "N",
 		"PAGER_DESC_NUMBERING" => "N",
@@ -48,7 +49,7 @@ $APPLICATION->SetTitle("Вопросы и ответы");
 		"PARENT_SECTION_CODE" => "",
 		"PREVIEW_TRUNCATE_LEN" => "",
 		"PROPERTY_CODE" => array(
-			0 => "",
+			0 => "subtitle",
 			1 => "",
 		),
 		"SET_BROWSER_TITLE" => "N",
@@ -58,18 +59,15 @@ $APPLICATION->SetTitle("Вопросы и ответы");
 		"SET_STATUS_404" => "N",
 		"SET_TITLE" => "N",
 		"SHOW_404" => "N",
-		"SORT_BY1" => "SORT",
-		"SORT_BY2" => "NAME",
-		"SORT_ORDER1" => "ASC",
+		"SORT_BY1" => "ACTIVE_FROM",
+		"SORT_BY2" => "SORT",
+		"SORT_ORDER1" => "DESC",
 		"SORT_ORDER2" => "ASC",
 		"STRICT_SECTION_CHECK" => "N",
-		"COMPONENT_TEMPLATE" => "faq",
-		"COLUMNS" => "one",
-		"NAME" => "Вопросы и ответы",
-		"TITLE" => "Опытные специалисты для повышения эффективности вашего бизнеса",
-		"SUBTITLE" => "Решения принимаются профессионалами. Мы гарантируем высокое качество оказания услуг.",
-		"IMAGE" => "/local/templates/unisite/assets/images/video-presentation/01_video-presentation.jpg",
-		"VIDEO_URL" => "https://youtu.be/1zClcu8ud5A"
+		"SUBTITLE" => "",
+		"TITLE" => "",
+		"COMPONENT_TEMPLATE" => "reviews",
+		"SHOW_MODE" => "one"
 	),
 	false
-);?><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+);?><br><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

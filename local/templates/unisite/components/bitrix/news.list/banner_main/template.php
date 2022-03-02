@@ -187,9 +187,7 @@ $this->setFrameMode(true);
                         </div>
                     </div>
                     
-                    <?if($arItem["DETAIL_PICTURE"]["SRC"]):?>
-                        <div class="header-banner-addition-image" style="background-image: url(<?=$arItem["DETAIL_PICTURE"]["SRC"]?>)"></div>
-                    <?endif;?>
+                    <div class="header-banner-addition-image" style="background-image: url(<?=$arItem["DETAIL_PICTURE"]["SRC"]?>)"></div>
                 </div>
             </div>
         <?endforeach;?>	

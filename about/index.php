@@ -1,10 +1,10 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetPageProperty("image", "/assets/images/header/04_header.jpg");
-$APPLICATION->SetTitle("Вопросы и ответы");
-?><?$APPLICATION->IncludeComponent(
+$APPLICATION->SetTitle("О нас");
+?>
+<?$APPLICATION->IncludeComponent(
 	"bitrix:news.list", 
-	"faq", 
+	"about", 
 	array(
 		"ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"ADD_SECTIONS_CHAIN" => "N",
@@ -18,25 +18,26 @@ $APPLICATION->SetTitle("Вопросы и ответы");
 		"CACHE_TIME" => "36000000",
 		"CACHE_TYPE" => "A",
 		"CHECK_DATES" => "Y",
+		"COMPONENT_TEMPLATE" => "about",
 		"DETAIL_URL" => "",
-		"DISPLAY_BOTTOM_PAGER" => "N",
+		"DISPLAY_BOTTOM_PAGER" => "Y",
 		"DISPLAY_DATE" => "N",
 		"DISPLAY_NAME" => "N",
 		"DISPLAY_PICTURE" => "N",
 		"DISPLAY_PREVIEW_TEXT" => "N",
 		"DISPLAY_TOP_PAGER" => "N",
 		"FIELD_CODE" => array(
-			0 => "",
+			0 => "DETAIL_PICTURE",
 			1 => "",
 		),
 		"FILTER_NAME" => "",
 		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
-		"IBLOCK_ID" => "9",
+		"IBLOCK_ID" => $GLOBALS["codekeepers_block_id"]["content_about_id"],
 		"IBLOCK_TYPE" => "content",
 		"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
 		"INCLUDE_SUBSECTIONS" => "N",
 		"MESSAGE_404" => "",
-		"NEWS_COUNT" => "20",
+		"NEWS_COUNT" => "1",
 		"PAGER_BASE_LINK_ENABLE" => "N",
 		"PAGER_DESC_NUMBERING" => "N",
 		"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
@@ -49,7 +50,27 @@ $APPLICATION->SetTitle("Вопросы и ответы");
 		"PREVIEW_TRUNCATE_LEN" => "",
 		"PROPERTY_CODE" => array(
 			0 => "",
-			1 => "",
+			1 => "view_mode",
+			2 => "title",
+			3 => "counter_value",
+			4 => "name",
+			5 => "subtitle",
+			6 => "counter_title",
+			7 => "url1_value",
+			8 => "url1_name",
+			9 => "url2_value",
+			10 => "url2_name",
+			11 => "url3_value",
+			12 => "url3_name",
+			13 => "url4_value",
+			14 => "url4_name",
+			15 => "url5_value",
+			16 => "url5_name",
+			17 => "url6_value",
+			18 => "url6_name",
+			19 => "url",
+			20 => "text",
+			21 => "",
 		),
 		"SET_BROWSER_TITLE" => "N",
 		"SET_LAST_MODIFIED" => "N",
@@ -58,18 +79,13 @@ $APPLICATION->SetTitle("Вопросы и ответы");
 		"SET_STATUS_404" => "N",
 		"SET_TITLE" => "N",
 		"SHOW_404" => "N",
-		"SORT_BY1" => "SORT",
-		"SORT_BY2" => "NAME",
-		"SORT_ORDER1" => "ASC",
+		"SORT_BY1" => "ACTIVE_FROM",
+		"SORT_BY2" => "SORT",
+		"SORT_ORDER1" => "DESC",
 		"SORT_ORDER2" => "ASC",
 		"STRICT_SECTION_CHECK" => "N",
-		"COMPONENT_TEMPLATE" => "faq",
-		"COLUMNS" => "one",
-		"NAME" => "Вопросы и ответы",
-		"TITLE" => "Опытные специалисты для повышения эффективности вашего бизнеса",
-		"SUBTITLE" => "Решения принимаются профессионалами. Мы гарантируем высокое качество оказания услуг.",
-		"IMAGE" => "/local/templates/unisite/assets/images/video-presentation/01_video-presentation.jpg",
-		"VIDEO_URL" => "https://youtu.be/1zClcu8ud5A"
+		"SHOW_MODE" => "two"
 	),
 	false
-);?><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+);?>
+<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

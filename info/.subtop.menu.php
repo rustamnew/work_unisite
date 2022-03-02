@@ -8,8 +8,29 @@ $aMenuLinks = Array(
 		"" 
 	),
 	Array(
+		"Акции", 
+		"/discounts/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
 		"Специалисты", 
 		"/team/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Отзывы", 
+		"/reviews/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Галерея", 
+		"/gallery/", 
 		Array(), 
 		Array(), 
 		"" 
@@ -24,6 +45,20 @@ $aMenuLinks = Array(
 	Array(
 		"Вопросы и ответы", 
 		"/faq/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"О нас", 
+		"/about/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Цены", 
+		"/pricing/", 
 		Array(), 
 		Array(), 
 		"" 
