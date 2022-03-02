@@ -180,6 +180,9 @@ header.navs-3 .nav-bar .nav-bar-link ul li a:hover{
 .btn-service-price {
     background-color: <?=$color1;?>;
 }
+.single-services-box .img-box .price-detail {
+    background-color: <?=$color1;?>;
+}
 .video-presentation .presentation-box .pulse{
     background-color: <?=$color1;?>;
 }
@@ -519,6 +522,12 @@ header.navs-3 .nav-bar .nav-bar-link ul li a:hover{
     background-color: <?=$color1;?>;
     border: 1px solid <?=$color1;?>;
 }
+.widget .accordion li:hover .link > a {
+    color: <?=$color1;?>;
+}
+.widget .accordion .submenu li:hover > a {
+    color: <?=$color1;?>;
+}
 .news-item .item-content span a{
     color: <?=$color1;?>;
 }
@@ -705,7 +714,10 @@ header.navs-2 .nav-bar .nav-bar-link ul li a {
 header.navs-2 .info-nav .info-nav-image svg {
     fill: <?=$color2;?>;
 }
-header.navs-2 .info-nav .contact-nav p, span {
+header.navs-2 .info-nav .contact-nav > p {
+    color: <?=$color2;?>;
+}
+header.navs-2 .info-nav .contact-nav > span {
     color: <?=$color2;?>;
 }
 header.navs-2 .info-nav:hover .info-nav-image svg {
@@ -789,6 +801,20 @@ form input.form-submit-button,
     background-color: <?=$color1;?>;
 }
 .nav-bar .nav-bar-link ul li.has-menu > a:after{
+    background-color: <?=$color1;?>;
+}
+.pagination.pagination-sm .page-item.active .page-link {
+    background-color: <?=$color1;?>;
+    border-color: <?=$color1;?>;
+    color: #FFF;
+}   
+.pagination.pagination-sm .page-link {
+    color: <?=$color1;?>;
+}
+.pagination.pagination-sm .page-link:hover {
+    color: <?=$color1;?>;
+}
+.pagination.pagination-sm .page-link:focus {
     background-color: <?=$color1;?>;
 }
 

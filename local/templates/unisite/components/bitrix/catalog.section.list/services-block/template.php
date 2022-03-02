@@ -57,12 +57,7 @@ $this->setFrameMode(true);
 										<?$path = CFile::GetPath($props["icon"]["VALUE"]);?>
 
 										<?
-										$img_file = $path;
-										$svg = new SimpleXMLElement( file_get_contents( $_SERVER["DOCUMENT_ROOT"].$img_file));
-										if($svg['id']){
-											$img_grup = $img_file.'#'.$svg['id'];
-										}
-										$svg_file = file_get_contents( $_SERVER["DOCUMENT_ROOT"].$img_file);
+										$svg_file = file_get_contents( $_SERVER["DOCUMENT_ROOT"].$path);
 										?>
 
 										<?if (stristr($path, '.svg')):?>

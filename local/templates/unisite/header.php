@@ -284,16 +284,17 @@ $GLOBALS += CJusticeMain::MainProperty($GLOBALS["codekeepers_block_id"]["setting
                         </div>
                     </div>
                 </nav>
+                
+                <!-- :: Search Box -->
+                <?$APPLICATION->IncludeComponent("bitrix:search.form", "header_search", Array(
+                    "PAGE" => "#SITE_DIR#search/index.php",
+                        "USE_SUGGEST" => "N",
+                    ),
+                    false
+                );?>
             </header>
 			
-			<!-- :: Search Box -->
-			<div class="search-box">
-				<form>
-					<input type="search" placeholder="Search Here..">
-					<button type="submit"><i class="fas fa-search"></i></button>
-				</form>
-				<i class="fas fa-times close-search"></i>
-			</div>
+
 			
 			<!-- :: Menu Box -->
 			

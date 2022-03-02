@@ -23,8 +23,7 @@ $this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayB
 ?>
 
 
-<?if($arItem["PROPERTIES"]["view_mode"]["VALUE"] == 'Вариант 1'):?>
-
+<?if($arParams["SHOW_MODE"] == 'one' || !$arParams["SHOW_MODE"]):?>
 
 	<section class="about" id="<?=$this->GetEditAreaId($arItem['ID']);?>">
 		<div class="container" >       
@@ -82,7 +81,7 @@ $this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayB
 		</div>
 	</section>
 
-<?elseif ($arItem["PROPERTIES"]["view_mode"]["VALUE"] == 'Вариант 2'):?>
+<?elseif($arParams["SHOW_MODE"] == 'two'):?>
 	<section class="about about-2 py-100">
 		<div class="container" id="<?=$this->GetEditAreaId($arItem['ID']);?>">
 			<div class="row">

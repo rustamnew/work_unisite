@@ -529,6 +529,8 @@ $(document).ready(function () {
             summonedSuccess.classList.remove('active');
         }
     });
+
+
 })
 
 
@@ -539,3 +541,4 @@ let closePopupForm = (e) => {
     let formWrap = document.querySelector('#summonedFormWrap')
     formWrap.classList.remove('active')
 }
+

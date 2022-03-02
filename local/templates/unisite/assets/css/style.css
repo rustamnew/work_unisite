@@ -961,6 +961,7 @@ p {
 
 /* :: About */
 .about {
+    padding-top: 100px;
     padding-bottom: 100px;
 }
 
@@ -1193,7 +1194,7 @@ p {
 
 .btn-service-price {
     padding: 5px 20px;
-    background-color: #C89D66;
+    background-color: #2652DC;
     border-radius: 3px;
     color: #fff;
     font-weight: 500;
@@ -2871,6 +2872,10 @@ p {
     margin-bottom: 20px;
 }
 
+.single-services-box > h3 {
+    margin-top: 30px;
+}
+
 .single-services-box h4 {
     margin-top: 50px;
     margin-bottom: 20px;
@@ -2879,15 +2884,16 @@ p {
 .single-services-box .img-box {
     position: relative;
 }
+
 .single-services-box .img-box .price-detail {
     position: absolute;
-    background-color: #C89D66;
+    background-color: #2652DC;
     color: #FFF;
     padding: 5px 18px;
     border-radius: 3px;
     bottom: 0;
     left: 5%;
-    font-size: 30px;
+    font-size: 22px;
 }
 
 .single-services-box .img-box-chart img {
@@ -3198,7 +3204,6 @@ p {
     width: -webkit-fit-content;
     width: -moz-fit-content;
     width: fit-content;
-    margin: 0 auto;
 }
 
 .pagination.one {
@@ -3405,6 +3410,14 @@ p {
     background-color: #2652DC;
     color: #FFF;
     border: 1px solid #2652DC;
+}
+
+.widget .accordion li:hover .link > a {
+    color: #2652DC;
+}
+
+.widget .accordion .submenu li:hover > a {
+    color: #2652DC;
 }
 
 /* :: News Item */
@@ -4376,7 +4389,9 @@ header.navs .nav-top .nav-top-box ul.info li.has-dropdown ul {
     position: absolute;
     z-index: 100;
     top: 100%;
-    left: 0;
+    left: -1px;
+    right: -1px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
     display: flex;
     flex-direction: column;
     background-color: #FFF;
@@ -4395,6 +4410,9 @@ header.navs .nav-top .nav-top-box ul.info li.has-dropdown ul li a {
 }
 header.navs .nav-top .nav-top-box ul.info li.has-dropdown ul li a:hover {
     color: #2652DC;
+}
+header.navs .nav-top .nav-top-box ul.info li.has-dropdown ul li:last-of-type {
+    border-bottom: none;
 }
 header.navs .nav-top .nav-top-box ul.info li.has-dropdown:hover ul {
     opacity: 1;
@@ -4421,9 +4439,8 @@ header.navs-2 .nav-top .nav-top-box ul.info li {
 header.navs-2 .nav-top .nav-top-box ul.info li a {
     color: #0B0C26;
 }
-header.navs-2 .nav-top .nav-top-box ul.info li:first-of-type {
-    padding-left: 0;
-    border-left: none;
+header.navs-2 .nav-top .nav-top-box ul.info li:last-of-type {
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
 }
 header.navs-2 .nav-top .nav-top-box ul li a.icon {
     color: #0B0C26;
@@ -4437,7 +4454,10 @@ header.navs-2 .nav-bar .nav-bar-link ul li a {
 header.navs-2 .nav-bar .info-nav .info-nav-image svg {
     fill: #0B0C26;
 }
-header.navs-2 .nav-bar .info-nav .contact-nav p, header.navs-2 .nav-bar .info-nav .contact-nav span {
+header.navs-2 .nav-bar .info-nav .contact-nav > p {
+    color: #0B0C26;
+}
+header.navs-2 .nav-bar .info-nav .contact-nav > span {
     color: #0B0C26;
 }
 header.navs-2 .nav-bar .info-nav:hover .info-nav-image svg {
@@ -4501,12 +4521,7 @@ header.navs-3 .nav-bar.active {
 }
 
 .nav-top .nav-top-box ul.info li:first-of-type {
-    padding-left: 0;
     border-left: none;
-}
-
-.nav-top .nav-top-box ul.info li:last-of-type {
-    padding-right: 0;
 }
 
 .nav-top .nav-top-box ul li span {
@@ -4802,31 +4817,30 @@ header.navs-3 .nav-bar.active {
 }
 
 /* :: Search Box */
-.search-box {
+/*
+.search-box{
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(38, 43, 62, 0.9);
+    background-color: rgb(38 43 62 / 0.9);
     z-index: 1040;
     -webkit-transition: unset;
     -o-transition: unset;
     transition: unset;
     display: none;
 }
-
-.search-box form {
+.search-box form{
     position: absolute;
     top: 50%;
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
     width: 85%;
 }
-
-.search-box form input {
+.search-box form input{
     background-color: transparent;
     width: 100%;
     padding: 10px 0;
@@ -4835,12 +4849,10 @@ header.navs-3 .nav-bar.active {
     border: 0;
     border-bottom: 1px solid #FFF;
 }
-
-.search-box form input:focus {
-    border-bottom: 1px solid #2652DC;
+.search-box form input:focus{
+    border-bottom: 1px solid $theme-color1;
 }
-
-.search-box form button {
+.search-box form button{
     position: absolute;
     right: 0;
     top: 0;
@@ -4849,12 +4861,11 @@ header.navs-3 .nav-bar.active {
     background-color: transparent;
     text-align: center;
     font-size: 25px;
-    color: #2652DC;
+    color: $theme-color1;
     border: 0;
     outline: none;
 }
-
-.search-box .close-search {
+.search-box .close-search{
     position: absolute;
     right: 50px;
     top: 50px;
@@ -4862,14 +4873,13 @@ header.navs-3 .nav-bar.active {
     color: #FFF;
     cursor: pointer;
 }
-
-.search-box .close-search:hover {
+.search-box .close-search:hover{
     -webkit-transform: rotate(360deg);
-    -ms-transform: rotate(360deg);
-    transform: rotate(360deg);
-    color: #2652DC;
+        -ms-transform: rotate(360deg);
+            transform: rotate(360deg);
+    color: $theme-color1;
 }
-
+*/
 /*Social*/
 .icon-follow {
     display: flex;
@@ -5051,6 +5061,38 @@ header.navs-3 .nav-bar.active {
     color: #FFF;
 }
 
+/*Search Page*/
+.searchpage-section {
+    padding: 70px 0;
+}
+
+.searchpage-section h2 {
+    margin-bottom: 40px;
+    font-weight: 600;
+    font-size: 36px;
+    color: #0B0C26;
+}
+
+.searchpage-section h5 {
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.searchpage-section h5 a {
+    font-weight: 500;
+    color: #0B0C26;
+}
+
+.search-item {
+    display: flex;
+    flex-direction: row;
+    align-items: unset;
+    border: 1px solid #e6e6e6;
+    padding: 12px;
+    margin-bottom: 24px;
+    width: 100%;
+}
+
 /*Отсортировать*/
 .page-wrapper {
     position: relative;
@@ -5171,4 +5213,14 @@ form input.form-submit-button:disabled,
 .bx-breadcrumb-item a,
 .bx-breadcrumb-item span {
     color: #FFF;
+}
+
+form#feedback-form .captcha-wrap {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+form#feedback-form-contacts .captcha-wrap {
+    margin-bottom: 20px;
 }
