@@ -203,7 +203,7 @@ $APPLICATION->SetTitle("Блог");
 		"DETAIL_DISPLAY_TOP_PAGER" => "N",
 		"DETAIL_FIELD_CODE" => array(
 			0 => "TAGS",
-			1 => "",
+			1 => "DATE_CREATE",
 		),
 		"DETAIL_PAGER_SHOW_ALL" => "N",
 		"DETAIL_PAGER_TEMPLATE" => "",
@@ -226,7 +226,7 @@ $APPLICATION->SetTitle("Блог");
 		"LIST_ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"LIST_FIELD_CODE" => array(
 			0 => "TAGS",
-			1 => "",
+			1 => "DATE_CREATE",
 		),
 		"LIST_PROPERTY_CODE" => array(
 			0 => "",

@@ -6,14 +6,33 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 <?$isMainPage = $APPLICATION->GetCurPage(false) === SITE_DIR;?>
 
 <?
-$main_settings_id = 1;
-$main_settings_element_id = 14;
+$main_settings_id = $GLOBALS["codekeepers_block_id"]["settings_main_id"];
+$main_settings_element_id = $GLOBALS["codekeepers_block_id"]["settings_main_element_id"];
 $GLOBALS["global_info"];
 if (CModule::IncludeModule("iblock")) {
 	$db_props = CIBlockElement::GetProperty($main_settings_id, $main_settings_element_id, "sort", "asc", array());
+
+    $prev_code = false;
+    $i = 1;
 	while($ar_props = $db_props->Fetch()){
-		$GLOBALS["global_info"][$ar_props["CODE"]] = $ar_props["VALUE"];
+        if ($ar_props["CODE"] == $prev_code) {
+
+            if(gettype($GLOBALS["global_info"][$ar_props["CODE"]]) == 'string') {
+                $savedProp = $GLOBALS["global_info"][$ar_props["CODE"]];
+                $GLOBALS["global_info"][$ar_props["CODE"]] = [];
+                $GLOBALS["global_info"][$ar_props["CODE"]][0] = $savedProp;
+            }
+            
+            $GLOBALS["global_info"][$ar_props["CODE"]][$i] = $ar_props["VALUE"];
+            
+            $i = $i + 1;
+        } else {
+            $GLOBALS["global_info"][$ar_props["CODE"]] = $ar_props["VALUE"];
+            $i = 1;
+        }
+        $prev_code = $ar_props["CODE"];
 	}
+    /*echo '<pre>';print_r($GLOBALS["global_info"]);echo '</pre>';*/
 }
 ?>
 
@@ -72,6 +91,8 @@ $GLOBALS += CJusticeMain::MainProperty($GLOBALS["codekeepers_block_id"]["setting
 
 
 
+
+
         <!-- :: Style CSS -->
 		<?$APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH. '/assets/css/style.css');?>
 
@@ -118,46 +139,55 @@ $GLOBALS += CJusticeMain::MainProperty($GLOBALS["codekeepers_block_id"]["setting
                     <div class="container">
                         <div class="nav-top-box d-flex align-items-center justify-content-between">
                             <ul class="info">
-                                <?if($GLOBALS['global_info']['contacts_email1'] and $GLOBALS['global_info']['contacts_email_show']):?>
-                                    <li <?if($GLOBALS['global_info']['contacts_email2']):?>class="has-dropdown"<?endif;?>>
-                                        <a href="mailto:<?=$GLOBALS['global_info']['contacts_email1'];?>">
-                                            <?=GetMessage("HEADER_EMAIL_TITLE");?><?=$GLOBALS['global_info']['contacts_email1'];?>
-                                        </a>
+                                <?if($GLOBALS['global_info']['contacts_email'] and $GLOBALS['global_info']['contacts_email_show']):?>
+                                    <li <?if(gettype($GLOBALS['global_info']['contacts_email']) == 'array'):?>class="has-dropdown"<?endif;?>>
 
-                                        <?if($GLOBALS['global_info']['contacts_email2']):?>
+                                        <?if(gettype($GLOBALS['global_info']['contacts_email']) == 'array'):?>
+                                            <a href="mailto:<?=$GLOBALS['global_info']['contacts_email'][0];?>">
+                                                <?=GetMessage("HEADER_EMAIL_TITLE");?><?=$GLOBALS['global_info']['contacts_email'][0];?>
+                                            </a>
+                                        <?else:?>
+                                            <a href="mailto:<?=$GLOBALS['global_info']['contacts_email'];?>">
+                                                <?=GetMessage("HEADER_EMAIL_TITLE");?><?=$GLOBALS['global_info']['contacts_email'];?>
+                                            </a>
+                                        <?endif;?>
+
+                                        <?if(gettype($GLOBALS['global_info']['contacts_email']) == 'array'):?>
                                             <ul>
-                                                <li>
-                                                    <a href="mailto:<?=$GLOBALS['global_info']['contacts_email1'];?>">
-                                                        <?=GetMessage("HEADER_EMAIL_TITLE");?><?=$GLOBALS['global_info']['contacts_email1'];?>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="mailto:<?=$GLOBALS['global_info']['contacts_email2'];?>">
-                                                        <?=GetMessage("HEADER_EMAIL_TITLE");?><?=$GLOBALS['global_info']['contacts_email2'];?>
-                                                    </a>
-                                                </li>
+                                                <?foreach($GLOBALS['global_info']['contacts_email'] as $item):?>
+                                                    <li>
+                                                        <a href="mailto:<?=$item;?>">
+                                                            <?=$item;?>
+                                                        </a>
+                                                    </li>
+                                                <?endforeach;?>
                                             </ul>
                                         <?endif;?>
                                     </li>
                                 <?endif;?>
-                                <?if($GLOBALS['global_info']['contacts_phone1'] and $GLOBALS['global_info']['contacts_phone_show']):?>
-                                    <li <?if($GLOBALS['global_info']['contacts_phone2']):?>class="has-dropdown"<?endif;?>>
-                                        <a href="tel:<?=$GLOBALS['global_info']['contacts_phone1'];?>">
-                                            <?=GetMessage("HEADER_PHONE_TITLE");?><?=$GLOBALS['global_info']['contacts_phone1'];?>
-                                        </a>
 
-                                        <?if($GLOBALS['global_info']['contacts_phone2']):?>
+                                <?if($GLOBALS['global_info']['contacts_phone'] and $GLOBALS['global_info']['contacts_phone_show']):?>
+                                    <li <?if(gettype($GLOBALS['global_info']['contacts_phone']) == 'array'):?>class="has-dropdown"<?endif;?>>
+
+                                        <?if(gettype($GLOBALS['global_info']['contacts_phone']) == 'array'):?>
+                                            <a href="mailto:<?=$GLOBALS['global_info']['contacts_phone'][0];?>">
+                                                <?=GetMessage("HEADER_PHONE_TITLE");?><?=$GLOBALS['global_info']['contacts_phone'][0];?>
+                                            </a>
+                                        <?else:?>
+                                            <a href="mailto:<?=$GLOBALS['global_info']['contacts_phone'];?>">
+                                                <?=GetMessage("HEADER_PHONE_TITLE");?><?=$GLOBALS['global_info']['contacts_phone'];?>
+                                            </a>
+                                        <?endif;?>
+
+                                        <?if(gettype($GLOBALS['global_info']['contacts_phone']) == 'array'):?>
                                             <ul>
-                                                <li>
-                                                    <a href="tel:<?=$GLOBALS['global_info']['contacts_phone1'];?>">
-                                                        <?=GetMessage("HEADER_PHONE_TITLE");?><?=$GLOBALS['global_info']['contacts_phone1'];?>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="tel:<?=$GLOBALS['global_info']['contacts_phone2'];?>">
-                                                        <?=GetMessage("HEADER_PHONE_TITLE");?><?=$GLOBALS['global_info']['contacts_phone2'];?>
-                                                    </a>
-                                                </li>
+                                                <?foreach($GLOBALS['global_info']['contacts_phone'] as $item):?>
+                                                    <li>
+                                                        <a href="mailto:<?=$item;?>">
+                                                            <?=$item;?>
+                                                        </a>
+                                                    </li>
+                                                <?endforeach;?>
                                             </ul>
                                         <?endif;?>
                                     </li>
@@ -331,7 +361,7 @@ $GLOBALS += CJusticeMain::MainProperty($GLOBALS["codekeepers_block_id"]["setting
                             </h4>
                         <?endif;?>
 
-                        <?if($GLOBALS['global_info']['contacts_phone_show']):?>
+                        <?if($GLOBALS['global_info']['contacts_phone'] and $GLOBALS['global_info']['contacts_phone_show']):?>
                             <div class="contact-box">
                                 <div class="contact-box-icon">
                                     <?$path = CFile::GetPath($GLOBALS['global_info']['icon_phone']);?>
@@ -343,17 +373,18 @@ $GLOBALS += CJusticeMain::MainProperty($GLOBALS["codekeepers_block_id"]["setting
                                     <?endif;?>
                                 </div>
                                 <div class="box">
-                                    <?if($GLOBALS['global_info']['contacts_phone1']):?>
+                                    <?if(gettype($GLOBALS['global_info']['contacts_phone']) == 'array'):?>
+                                        <?foreach($GLOBALS['global_info']['contacts_phone'] as $item):?>
+                                            <p>
+                                                <a href="tel:<?=$item;?>">
+                                                    <?=$item;?>
+                                                </a>
+                                            </p>
+                                        <?endforeach;?>
+                                    <?else:?>
                                         <p>
-                                            <a href="tel:<?=$GLOBALS['global_info']['contacts_phone1'];?>">
-                                                <?=$GLOBALS['global_info']['contacts_phone1'];?>
-                                            </a>
-                                        </p>
-                                    <?endif;?>
-                                    <?if($GLOBALS['global_info']['contacts_phone2']):?>
-                                        <p>
-                                            <a href="tel:<?=$GLOBALS['global_info']['contacts_phone2'];?>">
-                                                <?=$GLOBALS['global_info']['contacts_phone2'];?>
+                                            <a href="tel:<?=$GLOBALS['global_info']['contacts_phone'];?>">
+                                                <?=$GLOBALS['global_info']['contacts_phone'];?>
                                             </a>
                                         </p>
                                     <?endif;?>
@@ -361,7 +392,7 @@ $GLOBALS += CJusticeMain::MainProperty($GLOBALS["codekeepers_block_id"]["setting
                             </div>
                         <?endif;?>
 
-                        <?if($GLOBALS['global_info']['contacts_email_show']):?>
+                        <?if($GLOBALS['global_info']['contacts_email'] and $GLOBALS['global_info']['contacts_email_show']):?>
                             <div class="contact-box">
                                 <div class="contact-box-icon">
                                     <?$path = CFile::GetPath($GLOBALS['global_info']['icon_email']);?>
@@ -373,17 +404,18 @@ $GLOBALS += CJusticeMain::MainProperty($GLOBALS["codekeepers_block_id"]["setting
                                     <?endif;?>
                                 </div>
                                 <div class="box">
-                                    <?if($GLOBALS['global_info']['contacts_email1']):?>
+                                    <?if(gettype($GLOBALS['global_info']['contacts_email']) == 'array'):?>
+                                        <?foreach($GLOBALS['global_info']['contacts_email'] as $item):?>
+                                            <p>
+                                                <a href="mailto:<?=$item;?>">
+                                                    <?=$item;?>
+                                                </a>
+                                            </p>
+                                        <?endforeach;?>
+                                    <?else:?>
                                         <p>
-                                            <a href="mailto:<?=$GLOBALS['global_info']['contacts_email1'];?>">
-                                                <?=$GLOBALS['global_info']['contacts_email1'];?>
-                                            </a>
-                                        </p>
-                                    <?endif;?>
-                                    <?if($GLOBALS['global_info']['contacts_email2']):?>
-                                        <p>
-                                            <a href="mailto:<?=$GLOBALS['global_info']['contacts_email2'];?>">
-                                                <?=$GLOBALS['global_info']['contacts_email2'];?>
+                                            <a href="mailto:<?=$GLOBALS['global_info']['contacts_email'];?>">
+                                                <?=$GLOBALS['global_info']['contacts_email'];?>
                                             </a>
                                         </p>
                                     <?endif;?>
@@ -391,7 +423,7 @@ $GLOBALS += CJusticeMain::MainProperty($GLOBALS["codekeepers_block_id"]["setting
                             </div>
                         <?endif;?>
 
-                        <?if($GLOBALS['global_info']['contacts_address_show']):?>
+                        <?if($GLOBALS['global_info']['contacts_address'] and $GLOBALS['global_info']['contacts_address_show']):?>
                             <div class="contact-box">
                                 <div class="contact-box-icon">
                                     <?$path = CFile::GetPath($GLOBALS['global_info']['icon_address']);?>
@@ -403,11 +435,12 @@ $GLOBALS += CJusticeMain::MainProperty($GLOBALS["codekeepers_block_id"]["setting
                                     <?endif;?>
                                 </div>
                                 <div class="box">
-                                    <?if($GLOBALS['global_info']['contacts_address1']):?>
-                                        <p><?=$GLOBALS['global_info']['contacts_address1'];?></p>
-                                    <?endif;?>
-                                    <?if($GLOBALS['global_info']['contacts_address2']):?>
-                                        <p><?=$GLOBALS['global_info']['contacts_address2'];?></p>
+                                    <?if(gettype($GLOBALS['global_info']['contacts_address']) == 'array'):?>
+                                        <?foreach($GLOBALS['global_info']['contacts_address'] as $item):?>
+                                            <p><?=$item;?></p>
+                                        <?endforeach;?>
+                                    <?else:?>
+                                        <p><?=$GLOBALS['global_info']['contacts_address'];?></p>
                                     <?endif;?>
                                 </div>
                             </div>
@@ -447,7 +480,7 @@ $GLOBALS += CJusticeMain::MainProperty($GLOBALS["codekeepers_block_id"]["setting
 								),
 								"FILTER_NAME" => "",
 								"HIDE_LINK_WHEN_NO_DETAIL" => "N",
-								"IBLOCK_ID" => "13",
+								"IBLOCK_ID" => $GLOBALS["codekeepers_block_id"]["settings_social_id"],
 								"IBLOCK_TYPE" => "content",
 								"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
 								"INCLUDE_SUBSECTIONS" => "N",
@@ -498,7 +531,7 @@ $GLOBALS += CJusticeMain::MainProperty($GLOBALS["codekeepers_block_id"]["setting
 					array(
 						"COMPONENT_TEMPLATE" => "banner_main",
 						"IBLOCK_TYPE" => "banners",
-						"IBLOCK_ID" => "2",
+						"IBLOCK_ID" => $GLOBALS["codekeepers_block_id"]["banners_banner_main_id"],
 						"NEWS_COUNT" => "20",
 						"SORT_BY1" => "ACTIVE_FROM",
 						"SORT_ORDER1" => "DESC",

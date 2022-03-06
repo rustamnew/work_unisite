@@ -581,7 +581,11 @@ $APPLICATION->SetTitle("Главная");
 		"DISPLAY_PICTURE" => "N",
 		"DISPLAY_PREVIEW_TEXT" => "N",
 		"DISPLAY_TOP_PAGER" => "N",
-		"FIELD_CODE" => array(0=>"DATE_CREATE",1=>"",),
+		"FIELD_CODE" => array(
+			0 => "TAGS",
+			1 => "DATE_CREATE",
+			2 => "",
+		),
 		"FILTER_NAME" => "",
 		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
 		"IBLOCK_ID" => $GLOBALS["codekeepers_block_id"]["content_blog_id"],

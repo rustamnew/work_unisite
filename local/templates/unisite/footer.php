@@ -142,7 +142,7 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 							</div>
 						<?endif;?>
 
-						<div class="col-sm-12 col-md-6 col-lg-4">
+						<div class="col-sm-12 col-md-6 col-lg-4 footer-contacts">
                             <div class="footer-title">
                                 <h4>
                                     <?=$GLOBALS["global_info"]["footer_title_contacts"];?>
@@ -152,35 +152,47 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 							<?if($GLOBALS['global_info']['contacts_address_show']):?>
                                 <h4><?=$GLOBALS['global_info']['footer_title_address']?></h4>
                                 <p>
-                                    <?=$GLOBALS['global_info']['contacts_address1']?>
-                                    <br>
-                                    <?=$GLOBALS['global_info']['contacts_address2']?>
+									<?if(gettype($GLOBALS['global_info']['contacts_address']) == 'array'):?>
+                                        <?foreach($GLOBALS['global_info']['contacts_address'] as $item):?>
+											<span><?=$item?></span>
+                                        <?endforeach;?>
+                                    <?else:?>
+										<span><?=$GLOBALS['global_info']['contacts_address'];?></span>
+                                    <?endif;?>
                                 </p>
                             <?endif;?>
 
 							<?if($GLOBALS['global_info']['contacts_phone_show']):?>
                                 <h4><?=$GLOBALS['global_info']['footer_title_phone']?></h4>
                                 <p>
-                                    <a href="tel:<?=$GLOBALS['global_info']['contacts_phone1']?>">
-                                        <?=$GLOBALS['global_info']['contacts_phone1']?>
-                                    </a>
-                                    <br>
-                                    <a href="tel:<?=$GLOBALS['global_info']['contacts_phone2']?>">
-                                        <?=$GLOBALS['global_info']['contacts_phone2']?>
-                                    </a>
+									<?if(gettype($GLOBALS['global_info']['contacts_phone']) == 'array'):?>
+                                        <?foreach($GLOBALS['global_info']['contacts_phone'] as $item):?>
+											<a href="tel:<?=$item;?>">
+												<?=$item;?>
+											</a>
+                                        <?endforeach;?>
+                                    <?else:?>
+										<a href="tel:<?=$GLOBALS['global_info']['contacts_phone'];?>">
+											<?=$GLOBALS['global_info']['contacts_phone'];?>
+										</a>
+                                    <?endif;?>
                                 </p>
                             <?endif;?>
 
 							<?if($GLOBALS['global_info']['contacts_email_show']):?>
                                 <h4><?=$GLOBALS['global_info']['footer_title_email']?></h4>
                                 <p>
-                                    <a href="mailto:<?=$GLOBALS['global_info']['contacts_email1']?>">
-                                        <?=$GLOBALS['global_info']['contacts_email1']?>
-                                    </a>
-                                    <br>
-                                    <a href="mailto:<?=$GLOBALS['global_info']['contacts_email2']?>">
-                                        <?=$GLOBALS['global_info']['contacts_email2']?>
-                                    </a>
+									<?if(gettype($GLOBALS['global_info']['contacts_email']) == 'array'):?>
+                                        <?foreach($GLOBALS['global_info']['contacts_email'] as $item):?>
+											<a href="mailto:<?=$item;?>">
+												<?=$item;?>
+											</a>
+                                        <?endforeach;?>
+                                    <?else:?>
+										<a href="mailto:<?=$GLOBALS['global_info']['contacts_email'];?>">
+											<?=$GLOBALS['global_info']['contacts_email'];?>
+										</a>
+                                    <?endif;?>
                                 </p>
                             <?endif;?>
 						</div>

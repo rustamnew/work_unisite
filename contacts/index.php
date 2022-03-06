@@ -34,12 +34,18 @@ $APPLICATION->SetPageProperty("image", "/assets/images/header/04_header.jpg");
 							</div>
 							<div class="wrap-info">
 								<h4><?=$GLOBALS['global_info']['contacts_title_phone'];?></h4>
-								<a href="tel:<?=$GLOBALS['global_info']['contacts_phone1'];?>">
-									<p><?=$GLOBALS['global_info']['contacts_phone1'];?></p>
-								</a>
-								<a href="tel:<?=$GLOBALS['global_info']['contacts_phone2'];?>">
-									<p><?=$GLOBALS['global_info']['contacts_phone2'];?></p>
-								</a>
+
+								<?if(gettype($GLOBALS['global_info']['contacts_phone']) == 'array'):?>
+									<?foreach($GLOBALS['global_info']['contacts_phone'] as $item):?>
+										<a href="tel:<?=$item;?>">
+											<p><?=$item;?></p>
+										</a>
+									<?endforeach;?>
+								<?else:?>
+									<a href="tel:<?=$GLOBALS['global_info']['contacts_phone'];?>">
+										<p><?=$GLOBALS['global_info']['contacts_phone'];?></p>
+									</a>
+								<?endif;?>
 							</div>
 						</div>
 					<?endif;?>
@@ -59,14 +65,19 @@ $APPLICATION->SetPageProperty("image", "/assets/images/header/04_header.jpg");
 							</div>
 							<div class="wrap-info">
 								<h4><?=$GLOBALS['global_info']['contacts_title_email'];?></h4>
+								
+								<?if(gettype($GLOBALS['global_info']['contacts_email']) == 'array'):?>
+									<?foreach($GLOBALS['global_info']['contacts_email'] as $item):?>
+										<a href="mailto:<?=$item;?>">
+											<p><?=$item;?></p>
+										</a>
+									<?endforeach;?>
+								<?else:?>
+									<a href="mailto:<?=$GLOBALS['global_info']['contacts_email'];?>">
+										<p><?=$GLOBALS['global_info']['contacts_email'];?></p>
+									</a>
+								<?endif;?>
 
-								<a href="mailto:<?=$GLOBALS['global_info']['contacts_email1'];?>">
-									<p><?=$GLOBALS['global_info']['contacts_email1'];?></p>
-								</a>
-
-								<a href="mailto:<?=$GLOBALS['global_info']['contacts_email2'];?>">
-									<p><?=$GLOBALS['global_info']['contacts_email2'];?></p>
-								</a>
 							</div>
 						</div>
 					<?endif;?>
@@ -86,8 +97,14 @@ $APPLICATION->SetPageProperty("image", "/assets/images/header/04_header.jpg");
 							</div>
 							<div class="wrap-info">
 								<h4><?=$GLOBALS['global_info']['contacts_title_address'];?></h4>
-								<p><?=$GLOBALS['global_info']['contacts_address1'];?></p>
-								<p><?=$GLOBALS['global_info']['contacts_address2'];?></p>
+
+								<?if(gettype($GLOBALS['global_info']['contacts_address']) == 'array'):?>
+									<?foreach($GLOBALS['global_info']['contacts_address'] as $item):?>
+										<p><?=$item;?></p>
+									<?endforeach;?>
+								<?else:?>
+									<p><?=$GLOBALS['global_info']['contacts_address'];?></p>
+								<?endif;?>
 							</div>
 						</div>
 					<?endif;?>

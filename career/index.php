@@ -1,6 +1,6 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetPageProperty("image", "/assets/images/header/07_header.jpg");
+$APPLICATION->SetPageProperty("image", "/assets/images/header/04_header.jpg");
 $APPLICATION->SetTitle("Карьера");
 ?>
 <div class="careers py-100-70">
@@ -167,9 +167,9 @@ $APPLICATION->SetTitle("Карьера");
 		"SORT_ORDER2" => "DESC",
 		"STRICT_SECTION_CHECK" => "N",
 		"COMPONENT_TEMPLATE" => "blog-feed",
-		"NAME" => GetMessage("BLOG_FEED_NAME"),
-		"TITLE" => GetMessage("BLOG_FEED_TITLE"),
-		"SUBTITLE" => GetMessage("BLOG_FEED_SUBTITLE"),
+		"NAME" => "Новости",
+		"TITLE" => "Лента новостей",
+		"SUBTITLE" => "Решения принимаются профессионалами. Мы гарантируем высокое качество оказания услуг.",
 		"MINIMIZE_TITLE" => "N"
 	),
 	false
