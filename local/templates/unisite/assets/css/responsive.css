@@ -91,24 +91,24 @@
         width: 100%;
     }
 
-    /*
-    .nav-bar .nav-bar-link ul li.has-menu > a:after{
-        content: '\f107';
-        font-family: 'Font Awesome 5 Free';
+    .nav-bar .nav-bar-link ul li.has-menu > a:after {
+        content: "";
+        font-family: "Font Awesome 5 Free";
         position: absolute;
         right: 10px;
-        font-size: 12px;
+        font-size: 16px;
+        font-weight: 900;
         width: 25px;
         height: 25px;
-        background-color: #C9B38C;
+        background-color: #2652DC;
         color: #FFF;
         text-align: center;
         border-radius: 3px;
-        font-weight: 900;
         -webkit-transition: all 0.3s ease;
         -o-transition: all 0.3s ease;
         transition: all 0.3s ease;
-    }*/
+    }
+
     .nav-bar .nav-bar-link ul li.has-menu > a.active:after {
         -webkit-transform: rotate(-180deg);
         -ms-transform: rotate(-180deg);
@@ -229,23 +229,6 @@
     .nav-bar .nav-bar-link > ul ul li a {
         font-weight: 500;
         width: 100%;
-    }
-
-    .nav-bar .nav-bar-link ul li.has-menu > a:after {
-        content: "";
-        font-family: "Font Awesome 5 Free";
-        position: absolute;
-        right: 10px;
-        font-size: 12px;
-        width: 25px;
-        height: 25px;
-        background-color: #2652DC;
-        color: #FFF;
-        text-align: center;
-        border-radius: 3px;
-        -webkit-transition: all 0.3s ease;
-        -o-transition: all 0.3s ease;
-        transition: all 0.3s ease;
     }
 
     .nav-bar .nav-bar-link ul li.has-menu > a.active:after {
@@ -369,6 +352,16 @@
     /* :: Header */
     .banner .handline {
         font-size: 48px;
+    }
+
+    .single-practice-areas .faq-box button span {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .single-practice-areas .faq-box .summonFormButton {
+        margin-left: 0;
+        margin-bottom: 10px;
     }
 }
 /* :: Extra small devices */

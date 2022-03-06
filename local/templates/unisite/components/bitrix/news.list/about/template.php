@@ -60,7 +60,10 @@ $this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayB
 								<li><a href="<?=$arItem["PROPERTIES"]["url6_value"]["VALUE"];?>"><i class="fas fa-arrow-right"></i> <?=$arItem["PROPERTIES"]["url6_name"]["VALUE"];?></a></li>
 							<?endif;?>
 						</ul>
-						<a href="<?=$arItem["PROPERTIES"]["url"]["VALUE"];?>" class="btn-1 btn-3"><?=$arItem["PROPERTIES"]["text"]["VALUE"];?></a>
+
+						<?if($arParams["SHOW_BUTTON"] == 'Y' || !$arParams["SHOW_BUTTON"]):?>
+							<a href="<?=$arItem["PROPERTIES"]["url"]["VALUE"];?>" class="btn-1 btn-3"><?=$arItem["PROPERTIES"]["text"]["VALUE"];?></a>
+						<?endif;?>
 					</div>
 				</div>
 				<div class="col-lg-6">
@@ -116,7 +119,10 @@ $this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayB
 							<p><?=$arItem["PROPERTIES"]["subtitle"]["VALUE"];?></p>
 						</div>
 						<p><?=$arItem["PREVIEW_TEXT"]?></p>
-						<a href="<?=$arItem["PROPERTIES"]["url"]["VALUE"];?>" class="btn-1 btn-3"><?=$arItem["PROPERTIES"]["text"]["VALUE"];?></a>
+
+						<?if($arParams["SHOW_BUTTON"] == 'Y' || !$arParams["SHOW_BUTTON"]):?>
+							<a href="<?=$arItem["PROPERTIES"]["url"]["VALUE"];?>" class="btn-1 btn-3"><?=$arItem["PROPERTIES"]["text"]["VALUE"];?></a>
+						<?endif;?>
 					</div>
 				</div>
 			</div>

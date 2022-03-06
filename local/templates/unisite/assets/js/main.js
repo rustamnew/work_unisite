@@ -437,7 +437,7 @@ $(document).ready(function () {
         e.preventDefault()
         let valide = true
 
-        let submitButton = $("#feedback-form-popup").find(".form-submit-button")[0]
+        let submitButton = $("#feedback-form-popup").find(".summonedFormInputSubmit")[0]
         submitButton.disabled = true
 
         setTimeout(() => {
@@ -523,6 +523,33 @@ $(document).ready(function () {
     });
 
 
+    //Блок Услуги
+    $(".services-section-button").on('click', (e) => {
+        e.preventDefault()
+
+        let buttons = document.querySelectorAll('.services-section-button')
+
+        for (let i = 0; i < buttons.length; i++) {
+            buttons[i].classList.remove('active')
+        }
+
+        let target = e.currentTarget
+        target.classList.add('active')
+
+        let num = e.currentTarget.getAttribute("data-number")
+        let wrap = document.querySelector('.services-block')
+        let rows = wrap.querySelectorAll('.services-block-row')
+
+        for (let i = 0; i < rows.length; i++) {
+            rows[i].classList.remove('active')
+        }
+
+        let row = document.querySelector(`[data-number-row='${num}']`)
+        row.classList.add('active')
+    })
+
+
+    //Закрытие галочки
     $(document).click(function (e) {
         if ($(e.target).is('#success-icon') || $(e.target).is('#success-icon__icon')) {
             e.preventDefault()

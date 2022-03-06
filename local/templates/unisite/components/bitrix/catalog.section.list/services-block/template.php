@@ -34,10 +34,10 @@ $this->setFrameMode(true);
 		</ul>
 
 
-		<div class="services-sections-block-rows">
+		<div class="services-block">
 			<?$countRow = 1;?>
 			<?foreach($arResult["SECTIONS"] as $arItem):?>
-				<div class="row services-sections-row<?if($countRow === 1):?> active<?endif;?>" data-number-row="<?=$countRow?>">
+				<div class="services-block-row<?if($countRow === 1):?> active<?endif;?>" data-number-row="<?=$countRow?>">
 					<?
 					$arSelect = Array("ID", "NAME", "DETAIL_PAGE_URL", "PREVIEW_TEXT");
 					$arFilter = Array("IBLOCK_ID"=>$arItem["IBLOCK_ID"], "IBLOCK_SECTION_ID"=> $arItem["ID"], "GLOBAL_ACTIVE"=>"Y");
@@ -47,7 +47,7 @@ $this->setFrameMode(true);
 						$arFields = $ob->GetFields();?>
 						<div class="col-md-6 col-lg-4">
 							<a href="<?=$arFields["DETAIL_PAGE_URL"]?>">
-								<div class="practice-area-item services-sections-block-item">
+								<div class="services-block-item">
 									<?
 									$_res = CIBlockElement::GetByID($arFields["ID"]);
 									if($item = $_res->GetNext()) {
@@ -61,16 +61,16 @@ $this->setFrameMode(true);
 										?>
 
 										<?if (stristr($path, '.svg')):?>
-											<div class="practice-area-image">
+											<div class="services-block-item-image">
 												<?print_r($svg_file);?>
 											</div>
-										<?else:?>
-											<div class="practice-area-image">
+										<?elseif ($path):?>
+											<div class="services-block-item-image">
 												<img src="<?$path?>" alt="icon">
 											</div>
 										<?endif;?>
 				
-										<div class="content">
+										<div class="services-block-item-content">
 											<h4><?=$arFields["NAME"]?></h4>
 											<p>
 												<?if($arParams["TEXT_LENGTH"]):?>

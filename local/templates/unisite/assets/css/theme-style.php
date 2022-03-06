@@ -315,10 +315,12 @@ header.navs-3 .nav-bar .nav-bar-link ul li a:hover{
 .owl-testimonial-3 .box-item .text-box::after {
     background-color: <?=$color1;?>;
 }
+/*
 .owl-testimonial-2 .box-item .text-box .testimonial-expand-button, 
 .owl-testimonial-3 .box-item .text-box .testimonial-expand-button {
-    color: <?=$color1;?>;
+    color: <=$color1;?>;
 }
+*/
 .owl-testimonial-1 .box-item .clients-talk .img-box img, 
 .owl-testimonial-2 .box-item .clients-talk .img-box img, 
 .owl-testimonial-3 .box-item .clients-talk .img-box img {
@@ -817,24 +819,23 @@ form input.form-submit-button,
 .pagination.pagination-sm .page-link:focus {
     background-color: <?=$color1;?>;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-    .flat-get-in-touch .get-in-touch .flat-button-arrow:hover {
-        color: <?=$color1;?>;
-        background-color: <?=$color2;?>;
-    }
+.services-block .services-block-item h4{
+    color: <?=$color2;?>;
+}
+.services-section-button.active{
+    background-color: <?=$color2;?>;
+}
+.text-box-quote {
+    padding: 6px 18px;
+    background-color: <?=$color1;?>;
+}
+.header .box-hero .services-header .services-item:hover{
+    background-color: <?=$color1;?>;
+}
+.header .services-header .services-item span{
+    color: <?=$color2;?>;
+}
+.header .services-header .services-item-icon svg{
+    fill: <?=$color2;?>;
+}
 </style>

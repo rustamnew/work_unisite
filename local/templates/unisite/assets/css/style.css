@@ -173,6 +173,11 @@ p {
     background-color: #0B0C26;
 }
 
+.btn-smaller {
+    padding: 5px 20px;
+    line-height: unset;
+}
+
 .sec-title {
     margin-bottom: 50px;
 }
@@ -1185,9 +1190,13 @@ p {
     flex: 1;
 }
 
+.services-section-item .item-content p {
+    margin-top: 10px;
+}
+
 .services-section-item h5 {
     font-weight: 500;
-    margin-top: 15px;
+    margin-top: 10px;
     margin-bottom: 10px;
     color: #0B0C26;
 }
@@ -1875,6 +1884,7 @@ p {
     transform: translateY(-50%);
     line-height: 20px;
     text-align: center;
+    transition: 0.3s;
 }
 
 .faq .faq-box .question-header .click[aria-expanded=true] i {
@@ -2174,6 +2184,21 @@ p {
     display: flex;
     flex-direction: column;
     align-items: center;
+    /*
+    &::after {
+        content: '\f13b';
+        font-family: Flaticon;
+        font-size: 20px;
+        position: absolute;
+        color: #FFF;
+        background-color: $theme-color1;
+        top: 0;
+        left: 30px;
+        z-index: 0;
+        padding: 6px 18px;
+        line-height: 1;
+    }
+    */
 }
 .owl-testimonial-2 .box-item .text-box::before,
 .owl-testimonial-3 .box-item .text-box::before {
@@ -2184,20 +2209,6 @@ p {
     left: 25px;
     bottom: -20px;
     z-index: -1;
-}
-.owl-testimonial-2 .box-item .text-box::after,
-.owl-testimonial-3 .box-item .text-box::after {
-    content: "";
-    font-family: Flaticon;
-    font-size: 20px;
-    position: absolute;
-    color: #FFF;
-    background-color: #2652DC;
-    top: 0;
-    left: 30px;
-    z-index: 0;
-    padding: 6px 18px;
-    line-height: 1;
 }
 
 .owl-testimonial-2 .img-box {
@@ -2214,7 +2225,6 @@ p {
 
 .owl-testimonial-2 .box-item .text-box .testimonial-expand-button,
 .owl-testimonial-3 .box-item .text-box .testimonial-expand-button {
-    color: #2652DC;
     margin-top: 15px;
     font-weight: 600;
 }
@@ -2332,6 +2342,21 @@ p {
     display: flex;
     flex-direction: column;
     align-items: center;
+    /*
+    &::after {
+        content: "\f13b";
+        font-family: Flaticon;
+        font-size: 20px;
+        position: absolute;
+        color: #FFF;
+        background-color: $theme-color1;
+        top: 0;
+        left: 30px;
+        z-index: 1;
+        padding: 6px 18px;
+        line-height: 1;
+    }
+    */
 }
 .testimonial-grid .box-item .text-box::before {
     content: "";
@@ -2342,26 +2367,12 @@ p {
     bottom: -20px;
     z-index: 1;
 }
-.testimonial-grid .box-item .text-box::after {
-    content: "";
-    font-family: Flaticon;
-    font-size: 20px;
-    position: absolute;
-    color: #FFF;
-    background-color: #2652DC;
-    top: 0;
-    left: 30px;
-    z-index: 1;
-    padding: 6px 18px;
-    line-height: 1;
-}
 .testimonial-grid .box-item .text-box p {
     color: #9B9B9B;
     margin-bottom: 0;
     position: relative;
 }
 .testimonial-grid .box-item .text-box .testimonial-expand-button {
-    color: #2652DC;
     margin-top: 15px;
     font-weight: 600;
 }
@@ -2480,7 +2491,11 @@ p {
 
 .blog-item .img-box ul li a {
     font-size: 13px;
-    /*text-transform: capitalize;*/
+    color: #fff;
+}
+
+.blog-item .img-box ul li a:hover {
+    color: #fff;
 }
 
 .blog-item .img-box ul li:hover a {
@@ -2905,7 +2920,6 @@ p {
     border: 1px solid #E9E9E9;
     border-radius: 3px;
     padding: 40px;
-    margin-bottom: 30px;
     display: flex;
     flex-direction: column;
 }
@@ -4402,6 +4416,8 @@ header.navs .nav-top .nav-top-box ul.info li.has-dropdown ul li {
     padding: 10px;
     border: none;
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    width: 100%;
+    text-align: center;
 }
 header.navs .nav-top .nav-top-box ul.info li.has-dropdown ul li a {
     color: #09091F;
@@ -5223,4 +5239,213 @@ form#feedback-form .captcha-wrap {
 
 form#feedback-form-contacts .captcha-wrap {
     margin-bottom: 20px;
+}
+
+.pricing-section-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.pricing-section-list .col-md-6.col-lg-6 {
+    margin-bottom: 30px;
+}
+
+.pricing-section-list h4 a {
+    display: flex;
+    justify-content: space-between;
+}
+
+.item-careers .submenu {
+    display: flex;
+    flex-direction: column;
+}
+
+.item-careers .submenu li {
+    margin-bottom: 10px;
+}
+
+.item-careers .submenu li a {
+    line-height: 1.3;
+}
+
+.item-careers .item-careers-arrow svg {
+    height: 24px;
+}
+
+.single-practice-areas .faq-box button {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.single-practice-areas .faq-box .summonFormButton {
+    margin-left: auto;
+    margin-right: 20px;
+}
+
+.single-practice-areas .faq-box .btn-service-price {
+    margin-bottom: 0;
+    margin-right: 10px;
+}
+
+.services-sections-list {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.services-sections-list li {
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.services-section-button {
+    -webkit-transition: none;
+    -o-transition: none;
+    transition: none;
+}
+
+.services-section-button.active {
+    color: #FFF;
+    background-color: #0B0C26;
+}
+
+.services-section-button.active::after {
+    content: "";
+    background-color: unset;
+    -webkit-transform: unset;
+    -ms-transform: unset;
+    transform: unset;
+    -webkit-transform-origin: unset;
+    -ms-transform-origin: unset;
+    transform-origin: unset;
+    -webkit-transition: unset;
+    transition: unset;
+    -o-transition: unset;
+    transition: unset;
+    transition: unset;
+}
+
+.services-block .services-block-row {
+    display: none;
+}
+.services-block .services-block-row.active {
+    display: flex;
+    flex-wrap: wrap;
+}
+.services-block .services-block-row .col-md-6 {
+    margin-bottom: 30px;
+}
+.services-block .services-block-item {
+    height: 100%;
+    padding: 28px 22px;
+    margin-bottom: 30px;
+    border: 1px solid #DDD;
+    border-radius: 2px;
+    display: flex;
+}
+.services-block .services-block-item h4 {
+    width: 105%;
+    margin-bottom: 12px;
+    color: #0B0C26;
+}
+.services-block .services-block-item-image {
+    margin-right: 20px;
+}
+.services-block .services-block-item-image svg {
+    height: 42px;
+    fill: #2652DC;
+}
+.services-block .services-block-item-content p {
+    margin: 0;
+}
+
+.text-box-quote {
+    padding: 6px 18px;
+    background-color: #2652DC;
+    position: absolute;
+    top: 0;
+    left: 30px;
+    z-index: 1;
+}
+
+.text-box-quote svg {
+    height: 20px;
+    fill: #FFF;
+}
+
+.header .services-header {
+    width: 50%;
+}
+
+.header .services-header .services-item {
+    background-color: #FFF;
+    border-radius: 2px;
+    overflow: hidden;
+    min-width: 145px;
+    min-height: 120px;
+    display: inline-block;
+    margin: 5px;
+    padding: 20px;
+    text-align: center;
+}
+
+.header .services-header .services-item:hover {
+    background-color: #2652DC;
+    color: #FFF;
+}
+
+.header .services-header .services-item i {
+    display: block;
+    font-size: 35px;
+    line-height: 1;
+    margin-bottom: 15px;
+}
+
+.header .services-header .services-item span {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1;
+    color: #0B0C26;
+}
+
+.header .services-header .services-item:hover svg {
+    fill: #ffffff;
+}
+
+.header .services-header .services-item:hover span {
+    color: #ffffff;
+}
+
+.header .services-header .services-item-icon {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.header .services-header .services-item-icon svg {
+    height: 35px;
+    fill: #0B0C26;
+}
+
+.header .services-header .services-item-icon img {
+    height: 35px;
+    width: unset;
+}
+
+.careers .row.incl_area div[id] div[id] {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.careers .row .col-md-6.col-lg-4 {
+    margin-bottom: 30px;
+}
+
+.footer-contacts p {
+    display: flex;
+    flex-direction: column;
 }

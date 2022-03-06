@@ -51,7 +51,7 @@ $this->setFrameMode(true);
 								<?if($arItem["PROPERTIES"]["feature4"]["VALUE"]):?><li><i class="fas fa-arrow-right"></i> <?=$arItem["PROPERTIES"]["feature4"]["VALUE"];?></li><?endif;?>
 								<?if($arItem["PROPERTIES"]["feature5"]["VALUE"]):?><li><i class="fas fa-arrow-right"></i> <?=$arItem["PROPERTIES"]["feature5"]["VALUE"];?></li><?endif;?>
 							</ul>
-							<a href="#" class="btn-1">Подробнее</a>
+							<a href="#" class="summonFormButton btn-1"><?echo GetMessage("DETAIL")?></a>
 						</div>
 					</div>
 				</div>

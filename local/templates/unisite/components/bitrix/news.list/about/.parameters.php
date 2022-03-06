@@ -11,5 +11,10 @@ $arTemplateParameters = array(
 			"two" => GetMessage("SHOW_MODE_TWO"),
 		)
 	),
+	"SHOW_BUTTON" => Array(
+		"NAME" => GetMessage("SHOW_BUTTON"),
+		"TYPE" => "CHECKBOX",
+		"DEFAULT" => "Y",
+	),
 );
 ?>
