@@ -2829,7 +2829,7 @@ p {
 }
 
 .call-back {
-    padding: 40px;
+    padding: 30px;
     background-color: #2652DC;
     margin: 30px 0;
     text-align: center;
@@ -2878,6 +2878,11 @@ p {
     height: 24px;
 }
 
+/*
+.call-back a:hover p {
+    color: $theme-color2;
+}
+*/
 .single-services-box h3 {
     font-size: 32px;
     line-height: 1.2;
@@ -5077,6 +5082,10 @@ header.navs-3 .nav-bar.active {
     color: #FFF;
 }
 
+.discounts .row .col-md-6.col-lg-4 {
+    margin-bottom: 30px;
+}
+
 /*Search Page*/
 .searchpage-section {
     padding: 70px 0;
@@ -5112,6 +5121,7 @@ header.navs-3 .nav-bar.active {
 /*Отсортировать*/
 .page-wrapper {
     position: relative;
+    overflow-x: hidden;
 }
 
 .row.incl_area > div[id] {
@@ -5383,8 +5393,8 @@ form#feedback-form-contacts .captcha-wrap {
     background-color: #FFF;
     border-radius: 2px;
     overflow: hidden;
-    min-width: 145px;
-    min-height: 120px;
+    width: 145px;
+    height: 120px;
     display: inline-block;
     margin: 5px;
     padding: 20px;
@@ -5443,6 +5453,46 @@ form#feedback-form-contacts .captcha-wrap {
 
 .careers .row .col-md-6.col-lg-4 {
     margin-bottom: 30px;
+}
+
+.career-detail-page {
+    width: 100%;
+}
+
+.career-detail-title {
+    color: #262B3E;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.career-detail-tags {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+.career-detail-tags li {
+    display: inline-block;
+    font-weight: 500;
+    margin-right: 10px;
+}
+
+.career-detail-tags li.active {
+    padding: 2px 15px;
+    color: #FFF;
+    border-radius: 3px;
+    background-color: #2652DC;
+}
+
+.career-detail-page h4 {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    color: #0B0C26;
+}
+
+.career-detail-page .summonFormButton {
+    margin-top: 30px;
 }
 
 .footer-contacts p {

@@ -2,6 +2,24 @@
 /* :: Medium devices */
 /* :: Medium devices */
 @media (max-width: 991px) {
+    .header .sec-hero .row .col {
+        display: block !important;
+    }
+
+    .header .services-header {
+        width: 100%;
+        margin-top: 50px;
+        text-align: left !important;
+    }
+
+    .header .services-header .line {
+        display: inline-block;
+    }
+
+    .header-owl .header-banner-addition-image {
+        width: 35%;
+    }
+
     /* :: Navbar Top */
     .nav-top .nav-top-box ul li .btn-1 {
         display: none;
@@ -54,17 +72,17 @@
         margin: 5px 0;
     }
 
-    .nav-bar .nav-bar-link.active {
+    /*.nav-bar .nav-bar-link.active{
         display: block;
-        border-top: 1px solid rgba(34, 34, 34, 0.1);
+        border-top: 1px solid rgb(34, 34, 34, 0.1);
         overflow: hidden;
         overflow-y: scroll;
-        -webkit-box-shadow: 0 3px 4px rgba(0, 0, 0, 0.07);
-        box-shadow: 0 3px 4px rgba(0, 0, 0, 0.07);
+        -webkit-box-shadow: 0 3px 4px rgba(0,0,0,.07);
+                box-shadow: 0 3px 4px rgba(0,0,0,.07);
         background-color: #262B3E;
-        padding-bottom: 15px;
-    }
 
+
+    }*/
     .nav-bar .nav-bar-link > ul > li {
         display: block;
     }
@@ -205,11 +223,12 @@
     .nav-bar .nav-bar-link.active {
         display: block;
         border-top: 1px solid rgba(34, 34, 34, 0.1);
-        overflow: hidden;
+        max-height: 80vh;
         overflow-y: scroll;
         -webkit-box-shadow: 0 3px 4px rgba(0, 0, 0, 0.07);
         box-shadow: 0 3px 4px rgba(0, 0, 0, 0.07);
         background-color: #FFF;
+        padding-bottom: 15px;
     }
 
     .nav-bar .nav-bar-link > ul > li {
@@ -341,9 +360,25 @@
     .blog.area > .container > .row {
         flex-direction: column-reverse;
     }
+
+    .testimonial_popup {
+        width: 80%;
+    }
+
+    .item-careers_popup {
+        width: 80%;
+    }
 }
 /* :: Small devices */
 @media (max-width: 768px) {
+    .header .services-header {
+        display: none !important;
+    }
+
+    .header-banner-addition-image {
+        display: none;
+    }
+
     /* :: Navbar Top */
     .nav-top {
         display: none;
@@ -361,6 +396,62 @@
 
     .single-practice-areas .faq-box .summonFormButton {
         margin-left: 0;
+        margin-bottom: 10px;
+    }
+
+    /*Popup form*/
+    .summonedFormWrap h5 {
+        margin: 0;
+    }
+
+    .summonedForm {
+        padding: 20px;
+    }
+
+    #summonedFormClose {
+        top: 1%;
+    }
+
+    .summonedForm input,
+.summonedForm textarea {
+        margin-bottom: 20px;
+    }
+
+    .case-item .text-box {
+        padding: 16px;
+    }
+
+    .case-item .text-box .content-text h4 {
+        margin-top: 6px;
+        font-size: 18px;
+    }
+
+    .case-item .text-box .content-text p {
+        margin-top: 8px;
+        line-height: 1.5;
+        font-size: 13px;
+    }
+
+    .provide .provide-item .content h4 {
+        margin-bottom: 5px;
+    }
+
+    .footer .container > .row {
+        gap: 30px;
+    }
+
+    .footer-title h4 {
+        margin-bottom: 14px;
+    }
+
+    .copyright .container {
+        flex-direction: column-reverse;
+    }
+
+    .copyright .links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         margin-bottom: 10px;
     }
 }
@@ -385,5 +476,19 @@
     /* :: Video Presentation */
     .video-presentation {
         background-position: right;
+    }
+
+    .item-careers_popup {
+        width: 90%;
+        padding: 14px;
+    }
+
+    .testimonial_popup {
+        width: 90%;
+        padding: 14px;
+    }
+
+    .career-detail-page {
+        padding: 0 14px;
     }
 }

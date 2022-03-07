@@ -62,7 +62,7 @@ $this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayB
 						</ul>
 
 						<?if($arParams["SHOW_BUTTON"] == 'Y' || !$arParams["SHOW_BUTTON"]):?>
-							<a href="<?=$arItem["PROPERTIES"]["url"]["VALUE"];?>" class="btn-1 btn-3"><?=$arItem["PROPERTIES"]["text"]["VALUE"];?></a>
+							<a href="<?=SITE_DIR?>about/" class="btn-1 btn-3"><?=$arItem["PROPERTIES"]["text"]["VALUE"];?></a>
 						<?endif;?>
 					</div>
 				</div>
@@ -121,7 +121,7 @@ $this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayB
 						<p><?=$arItem["PREVIEW_TEXT"]?></p>
 
 						<?if($arParams["SHOW_BUTTON"] == 'Y' || !$arParams["SHOW_BUTTON"]):?>
-							<a href="<?=$arItem["PROPERTIES"]["url"]["VALUE"];?>" class="btn-1 btn-3"><?=$arItem["PROPERTIES"]["text"]["VALUE"];?></a>
+							<a href="<?=SITE_DIR?>about/" class="btn-1 btn-3"><?=$arItem["PROPERTIES"]["text"]["VALUE"];?></a>
 						<?endif;?>
 					</div>
 				</div>

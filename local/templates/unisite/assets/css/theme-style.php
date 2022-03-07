@@ -818,6 +818,7 @@ form input.form-submit-button,
 }
 .pagination.pagination-sm .page-link:focus {
     background-color: <?=$color1;?>;
+    color: #FFF;
 }
 .services-block .services-block-item h4{
     color: <?=$color2;?>;
@@ -837,5 +838,11 @@ form input.form-submit-button,
 }
 .header .services-header .services-item-icon svg{
     fill: <?=$color2;?>;
+}
+.career-detail-tags li.active{
+    background-color: <?=$color1;?>;
+}
+.career-detail-page h4 {
+    color: <?=$color2;?>;
 }
 </style>

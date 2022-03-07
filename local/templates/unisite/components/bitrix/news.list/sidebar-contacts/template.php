@@ -36,8 +36,19 @@ $this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayB
 			<h5><?=$arItem["PROPERTIES"]["phone_title"]["VALUE"]?></h5>
 
 			<?if($GLOBALS['global_info']['contacts_phone_show']):?>
-				<p><?=$GLOBALS['global_info']['contacts_phone1'];?></p>
-				<p><?=$GLOBALS['global_info']['contacts_phone2'];?></p>
+
+				<?if(gettype($GLOBALS['global_info']['contacts_phone']) == 'array'):?>
+					<?foreach($GLOBALS['global_info']['contacts_phone'] as $item):?>
+						<a href="tel:<?=$item;?>">
+							<p><?=$item;?></p>
+						</a>
+					<?endforeach;?>
+				<?else:?>
+					<a href="tel:<?=$GLOBALS['global_info']['contacts_phone'];?>">
+						<p><?=$GLOBALS['global_info']['contacts_phone'];?></p>
+					</a>
+				<?endif;?>
+
 			<?endif;?>
 		</div>
 	<?endif;?>
@@ -56,8 +67,19 @@ $this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayB
 			<h5><?=$arItem["PROPERTIES"]["email_title"]["VALUE"]?></h5>
 
 			<?if($GLOBALS['global_info']['contacts_email_show']):?>
-				<p><?=$GLOBALS['global_info']['contacts_email1'];?></p>
-				<p><?=$GLOBALS['global_info']['contacts_email2'];?></p>
+
+				<?if(gettype($GLOBALS['global_info']['contacts_email']) == 'array'):?>
+					<?foreach($GLOBALS['global_info']['contacts_email'] as $item):?>
+						<a href="mailto:<?=$item;?>">
+							<p><?=$item;?></p>
+						</a>
+					<?endforeach;?>
+				<?else:?>
+					<a href="mailto:<?=$GLOBALS['global_info']['contacts_email'];?>">
+						<p><?=$GLOBALS['global_info']['contacts_email'];?></p>
+					</a>
+				<?endif;?>
+
 			<?endif;?>
 		</div>
 	<?endif;?>
@@ -76,8 +98,16 @@ $this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayB
 			<h5><?=$arItem["PROPERTIES"]["address_title"]["VALUE"]?></h5>
 
 			<?if($GLOBALS['global_info']['contacts_address_show']):?>
-				<p><?=$GLOBALS['global_info']['contacts_address1'];?></p>
-				<p><?=$GLOBALS['global_info']['contacts_address2'];?></p>
+
+				<?if(gettype($GLOBALS['global_info']['contacts_address']) == 'array'):?>
+					<?foreach($GLOBALS['global_info']['contacts_address'] as $item):?>
+						<p><?=$item;?></p>
+					<?endforeach;?>
+				<?else:?>
+					<p><?=$GLOBALS['global_info']['contacts_address'];?></p>
+				<?endif;?>
+
+
 			<?endif;?>
 		</div>
 	<?endif;?>
