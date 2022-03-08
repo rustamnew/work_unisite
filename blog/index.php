@@ -187,11 +187,11 @@ $APPLICATION->SetTitle("Блог");
 	array(
 		"ADD_ELEMENT_CHAIN" => "N",
 		"ADD_SECTIONS_CHAIN" => "N",
-		"AJAX_MODE" => "Y",
+		"AJAX_MODE" => "N",
 		"AJAX_OPTION_ADDITIONAL" => "",
 		"AJAX_OPTION_HISTORY" => "N",
-		"AJAX_OPTION_JUMP" => "Y",
-		"AJAX_OPTION_STYLE" => "Y",
+		"AJAX_OPTION_JUMP" => "N",
+		"AJAX_OPTION_STYLE" => "N",
 		"BROWSER_TITLE" => "-",
 		"CACHE_FILTER" => "N",
 		"CACHE_GROUPS" => "Y",
@@ -204,6 +204,7 @@ $APPLICATION->SetTitle("Блог");
 		"DETAIL_FIELD_CODE" => array(
 			0 => "TAGS",
 			1 => "DATE_CREATE",
+			2 => "",
 		),
 		"DETAIL_PAGER_SHOW_ALL" => "N",
 		"DETAIL_PAGER_TEMPLATE" => "",
@@ -227,6 +228,7 @@ $APPLICATION->SetTitle("Блог");
 		"LIST_FIELD_CODE" => array(
 			0 => "TAGS",
 			1 => "DATE_CREATE",
+			2 => "",
 		),
 		"LIST_PROPERTY_CODE" => array(
 			0 => "",

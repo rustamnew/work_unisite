@@ -89,7 +89,7 @@ $APPLICATION->SetTitle("Магазин");
 		"SET_STATUS_404" => "N",
 		"SHOW_404" => "N",
 		"MESSAGE_404" => "",
-		"SHOW_SECTION" => "Y",
+		"SHOW_SECTION" => "N",
 		"SEF_URL_TEMPLATES" => array(
 			"news" => "",
 			"section" => "#SECTION_CODE#/",

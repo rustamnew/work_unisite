@@ -85,7 +85,7 @@ $APPLICATION->SetTitle("О нас");
 		"SORT_ORDER2" => "ASC",
 		"STRICT_SECTION_CHECK" => "N",
 		"SHOW_MODE" => "two",
-		"SHOW_BUTTON" => "N",
+		"SHOW_BUTTON" => "N"
 	),
 	false
 );?>

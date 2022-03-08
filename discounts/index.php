@@ -48,7 +48,7 @@ $APPLICATION->SetTitle("Акции");
 		"PARENT_SECTION_CODE" => "",
 		"PREVIEW_TRUNCATE_LEN" => "",
 		"PROPERTY_CODE" => array(
-			0 => "",
+			0 => "city",
 			1 => "",
 		),
 		"SET_BROWSER_TITLE" => "N",
